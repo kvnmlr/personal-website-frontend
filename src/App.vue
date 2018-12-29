@@ -1,0 +1,121 @@
+<template>
+  <v-app id="app" dark>
+    <div class="test" v-show="false">test</div>
+    <v-snackbar v-model="alertVisible" :timeout=3500 :bottom=true :color="alert.type">
+      {{ alert.text }}
+    </v-snackbar>
+    <app-header v-bind:user="user" v-on:logout="logout" v-on:authorizeUser="authorizeUser"></app-header>
+    <v-content>
+      <landing v-if="$route.name === 'Landing'"></landing>
+      <v-container v-else fill-height fill-width>
+        <v-layout justify-center>
+          <v-flex>
+            <router-view v-bind:user="user" v-on:logout="logout" v-on:authorizeUser="authorizeUser" v-on:flash="flash">
+            </router-view>
+          </v-flex>
+        </v-layout>
+      </v-container>
+    </v-content>
+    <app-footer></app-footer>
+  </v-app>
+</template>
+
+<script>
+  import Header from "./components/layout/Header"
+  import Footer from "./components/layout/Footer"
+  import apiMixin from "./mixins/apiMixin";
+  import {EventBus} from "./eventBus";
+  import Landing from "./components/general/Landing";
+
+  export default {
+    components: {
+      Landing,
+      'app-header': Header,
+      'app-footer': Footer,
+    },
+    data: () => ({
+      csrfToken: '',
+      user: null,
+      alert: {},
+      alertVisible: false,
+    }),
+    created() {
+      this.authorizeUser();
+      EventBus.$on('reloadData', () => {
+        this.authorizeUser();
+      });
+      EventBus.$on('authorizeUser', () => {
+        this.authorizeUser();
+      });
+      EventBus.$on('flash', (data) => {
+        this.flash(data);
+      })
+    },
+    methods: {
+      async logout() {
+        this.GET('logout', (data, err) => {
+          if (!err) {
+            this.user = undefined;
+            this.flash({
+              type: 'success',
+              text: 'You are now logged out'
+            });
+            this.$router.push('/hub');
+          }
+        });
+      },
+      async authorizeUser() {
+        this.GET('authenticate', (data, err) => {
+          if (!err) {
+            if (this.user) {
+              if (this.user._id === data.user._id) {
+                EventBus.$emit('authenticated', this.user);
+              }
+            } else {
+              this.user = data.user;
+              EventBus.$emit('authenticated', this.user);
+            }
+            this.performSearch();
+          } else {
+            EventBus.$emit('unauthenticated');
+          }
+        });
+      },
+
+      async performSearch() {
+        if (!this.user) {
+          return;
+        }
+        this.GET('dashboard', (data, err) => {
+          if (err) {
+            if (!this.user) {
+              setTimeout(() => {
+                this.$router.push('/login');
+                this.$emit('flash', err.flash);
+              }, 100);
+            }
+            this.$emit('flash', err.flash);
+          } else {
+            this.user = data.user;
+            console.log(this.user);
+
+            if (!this.user.fullyRegistered) {
+              this.$router.push('/signup')
+            }
+          }
+        });
+      },
+      flash(value) {
+        if (value) {
+          this.alert = value;
+          this.alertVisible = true;
+
+          setTimeout(() => {
+            this.alertVisible = false;
+          }, 2500);
+        }
+      }
+    },
+    mixins: [apiMixin]
+  }
+</script>
