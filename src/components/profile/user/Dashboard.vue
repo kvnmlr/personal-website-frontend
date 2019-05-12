@@ -100,7 +100,7 @@
                   </v-flex>
                 </v-layout>
                 <v-flex xs12>
-                  <v-card dark class="gradient-no-switch gradient-secondary elevation-5">
+                  <v-card class="gradient-no-switch gradient-secondary elevation-5">
                     <v-card-text>
                       <h3 style="color: white">Invite Friends</h3>
                       <br>

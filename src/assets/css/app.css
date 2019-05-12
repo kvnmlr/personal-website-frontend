@@ -11,16 +11,20 @@ a {
   text-decoration: none;
 }
 
+h1 {
+  color: #1a1a1a;
+}
+
 h2 {
-  color: #0091ea;
+  color: #54B4DE;
 }
 
 h3 {
-  color: #181818;
+  color: #88599c;
 }
 
 h4 {
-  color: #424242;
+  color: #49c3b7;
 }
 
 #map {
@@ -39,8 +43,8 @@ h4 {
 }
 
 .separator{
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .hidden {
@@ -97,7 +101,7 @@ h4 {
 }
 
 .gradient-orange {
-  background-image: linear-gradient(to right, #cf9679 0%, #a35c86 51%, #91498c 100%);
+  background-image: linear-gradient(to right, #cf9679 0%, #a3627b 51%, #8c4b8f 100%);
 }
 
 .gradient-green {
@@ -110,6 +114,22 @@ h4 {
 
 .gradient-secondary {
   background-image: linear-gradient(to right, #4c4c4c 0%, #4b4b4b 51%, #343434 100%);
+}
+
+.gradient-dark {
+  background-image: linear-gradient(to right, #424242 0%, #313131 51%, #1a1a1a 100%);
+}
+
+.gradient-light {
+  background-image: linear-gradient(to right, #f2f2f2 0%, #d1d1d1 51%, #aaaaaa 100%);
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transition: opacity;
 }
 
 Footer

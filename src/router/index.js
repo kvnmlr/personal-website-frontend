@@ -1,24 +1,26 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import About from '../components/general/About'
-import Hub from '../components/general/home/Hub'
+import Home from '../components/general/home/Education'
 import Landing from '../components/general/Landing'
 import Posts from '../components/posts/List'
 import PostDetails from '../components/posts/PostDetails'
 import Creator from '../components/posts/Creator'
 import Admin from '../components/profile/admin/Admin'
-import Dashboard from '../components/profile/user/Dashboard'
-import GetStarted from '../components/general/GetStarted'
-import Feedback from '../components/general/Feedback'
+import Education from '../components/profile/user/Dashboard'
+import Contact from '../components/general/Feedback'
 import SignUp from '../components/profile/SignUp'
 import LogIn from '../components/profile/LogIn'
+import GoalsSpring2019 from '../components/goals/GoalsSpring2019'
+import ReportJanuary2019 from '../components/goals/reports/ReportJanuary2019'
+import ProjectBeastFM from '../components/projects/Beastfm'
+import ProjectAlienMaker from '../components/projects/AlienMaker'
+import ProjectExploxCycling from '../components/projects/ExploxCycling'
+import MoreProjects from '../components/projects/More'
 
 Vue.use(Router);
 
 export default new Router({
-  scrollBehavior() {
-    return { x: 0, y: 0 };
-  },
   mode: 'history',
   base: process.env.ROUTER_ROOT,
   routes: [
@@ -28,9 +30,14 @@ export default new Router({
       component: Landing
     },
     {
-      path: '/hub',
-      name: 'Hub',
-      component: Hub
+      path: '/home',
+      name: 'Home',
+      component: Home
+    },
+    {
+      path: '/education',
+      name: 'Education',
+      component: Home
     },
     {
       path: '/about',
@@ -38,14 +45,9 @@ export default new Router({
       component: About
     },
     {
-      path: '/guide',
-      name: 'GetStarted',
-      component: GetStarted
-    },
-    {
-      path: '/feedback',
-      name: 'Feedback',
-      component: Feedback
+      path: '/contact',
+      name: 'Contact',
+      component: Contact
     },
     {
       path: '/creator',
@@ -69,8 +71,8 @@ export default new Router({
     },
     {
       path: '/dashboard',
-      name: 'Dashboard',
-      component: Dashboard
+      name: 'Education',
+      component: Education
     },
     {
       path: '/signup',
@@ -81,6 +83,36 @@ export default new Router({
       path: '/login',
       name: 'LogIn',
       component: LogIn
+    },
+    {
+      path: '/goals/spring2019',
+      name: 'GoalsSpring2019',
+      component: GoalsSpring2019
+    },
+    {
+      path: '/goals/reports/january2019',
+      name: 'ReportJanuary2019',
+      component: ReportJanuary2019
+    },
+    {
+      path: '/projects/beastfm',
+      name: 'ProjectBeastFM',
+      component: ProjectBeastFM
+    },
+    {
+      path: '/projects/alienmaker',
+      name: 'AlienMaker',
+      component: ProjectAlienMaker
+    },
+    {
+      path: '/projects/exploxcycling',
+      name: 'ExploxCycling',
+      component: ProjectExploxCycling
+    },
+    {
+      path: '/projects/more',
+      name: 'More',
+      component: MoreProjects
     },
   ]
 })

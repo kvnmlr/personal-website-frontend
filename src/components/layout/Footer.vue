@@ -1,9 +1,9 @@
 <template>
   <Footer class="font-small">
     <template>
-      <v-footer style="z-index: 100" class="pa-3" dark>
+      <v-footer style="z-index: 100" class="pa-3">
         <v-spacer></v-spacer>
-        <div>&copy; Vue.js Website Template {{ new Date().getFullYear() }}</div>
+        <div>&copy; Alpha Implement {{ new Date().getFullYear() }}</div>
       </v-footer>
     </template>
   </Footer>

@@ -23,10 +23,15 @@ Vue.use(Vuetify, {
     primary: '#4DA7DC',
     secondary: '#9C53A2',
     accent: '#F7BE7B',
-    error: colors.red.base,
-    warning: colors.yellow.base,
-    info: colors.lightBlue.accent3,
-    success: colors.green.accent4
+    error: '#9C53A2',
+    warning: '#F7BE7B',
+    info: '#4DA7DC',
+    success: '#49c3b7',
+    blue: '#4DA7DC',
+    orange: '#F7BE7B',
+    red: '#9C53A2',
+    green: '#49c3b7',
+    violet: '#7B83C1'
   }
 });
 

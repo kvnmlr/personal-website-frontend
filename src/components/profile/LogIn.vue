@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="!dense">
+    <section v-if="!dense">
       <h1>Login</h1>
       <v-container fluid style="width: 800px;">
         <v-card>
@@ -26,8 +26,8 @@
 
         </v-card>
       </v-container>
-    </div>
-    <section v-else>
+    </section>
+    <section v-else  style="background-color: white; width: 100%; padding: 10px;">
       <v-layout row wrap>
         <v-flex xs12>
           <v-form>
@@ -37,8 +37,8 @@
                           v-model="password"></v-text-field>
             <v-spacer></v-spacer>
             <span>
-            <v-btn class="gradient gradient-orange" round dark v-on:click.prevent="login">Login</v-btn>
-            <v-btn class="gradient gradient-blue" light round to="/signup">Sign Up</v-btn>
+            <v-btn class="gradient gradient-orange" dark round v-on:click.prevent="login">Login</v-btn>
+            <v-btn class="gradient gradient-blue" dark round to="/signup">Sign Up</v-btn>
           </span>
           </v-form>
         </v-flex>

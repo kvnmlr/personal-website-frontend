@@ -4,7 +4,7 @@
     <div class="separator"></div>
     <v-layout row wrap>
       <v-flex d-flex xs12 sm7 md7>
-        <v-card class="gradient-no-switch gradient-secondary" dark>
+        <v-card class="gradient-no-switch gradient-secondary">
           <v-card-title primary class="title">
             <v-icon>show_chart</v-icon>&nbsp;Search Posts
           </v-card-title>
