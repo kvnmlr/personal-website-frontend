@@ -33,11 +33,11 @@
     </v-container>
 
     <v-container>
-      <v-timeline clipped>
+      <v-timeline :dense="$vuetify.breakpoint.smAndDown">
         <v-timeline-item v-for="(item, i) in items" :color="item.color" :key="i" small>
           <span slot="opposite" :class="`headline font-weight-bold ${item.color}--text`" v-text="item.year"></span>
           <div class="py-3">
-            <v-card class="gradient-no-switch elevation-10" style="padding: 20px; margin-bottom: -35px; margin-top: -35px;" light>
+            <v-card class="gradient-no-switch elevation-0" style="padding: 20px;" light>
               <v-card-title primary-title class="layout justify-center">
                 <h2 :class="`headline font-weight-light ${item.color}--text`">{{ item.heading }}</h2>
               </v-card-title>
@@ -46,6 +46,9 @@
                 <p v-if="item.link">
                   <br>
                   <a :href="item.link.url">{{ item.link.text }}</a></p>
+              </v-card-text>
+              <v-card-text class="layout justify-center" style="color: grey">
+                {{ item.year }}
               </v-card-text>
             </v-card>
           </div>

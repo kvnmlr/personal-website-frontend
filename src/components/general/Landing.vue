@@ -36,13 +36,13 @@
       <v-container fill-height fill-width>
         <v-layout column wrap class="my-5">
           <h1
-            :style="{ paddingTop: '20px', paddingBottom: '50px', paddingLeft: '300px', paddingRight: '300px', backgroundPosition: '50% -10px', backgroundImage: 'url(' + require('@/assets/img/stroke2.png') + ')'}"
+            :style="{ paddingTop: '20px', paddingBottom: '50px', backgroundPosition: '50% -10px', backgroundImage: 'url(' + require('@/assets/img/stroke2.png') + ')'}"
             class="display-2 text-xs-center white--text">Spotlight</h1><br>
           <h1 class="subheading text-xs-center">Currently hot projects worth checking out</h1>
           <v-container grid-list-xl>
             <v-layout row wrap align-center>
               <v-flex xs12 md4>
-                <v-card dark class="gradient-no-switch gradient-blue" style="padding: 20px;" hover
+                <v-card dark class="gradient-no-switch gradient-blue" style="padding: 40px 20px 20px; min-height: 360px; max-height: 450px;" hover
                         to="/projects/exploxcycling">
                   <v-card-text class="text-xs-center">
                     <v-icon x-large class="text--lighten-2">directions_bike</v-icon>
@@ -57,7 +57,7 @@
                 </v-card>
               </v-flex>
               <v-flex xs12 md4>
-                <v-card dark class="gradient-no-switch gradient-green" style="padding: 20px;" hover
+                <v-card dark class="gradient-no-switch gradient-green" style="padding: 40px 20px 20px; min-height: 360px; max-height: 450px;" hover
                         to="/projects/vueupstarter">
                   <v-card-text class="text-xs-center">
                     <v-icon x-large class="text--lighten-2">desktop_mac</v-icon>
@@ -72,7 +72,7 @@
                 </v-card>
               </v-flex>
               <v-flex xs12 md4>
-                <v-card dark class="gradient-no-switch gradient-orange" style="padding: 20px;" hover
+                <v-card dark class="gradient-no-switch gradient-orange" style="padding: 40px 20px 20px; min-height: 360px; max-height: 450px;" hover
                         to="/projects/soho">
                   <v-card-text class="text-xs-center">
                     <v-icon x-large class="text--lighten-2">dashboard</v-icon>
@@ -94,10 +94,12 @@
     <div class="separator"></div>
 
     <!-- Introduce -->
-    <section class="elevation-15"
-             :style="{ padding: '50px 130px 50px 130px',width: '100%', backgroundSize: '100%', backgroundImage: 'url(' + require('@/assets/img/paper2.jpg') + ')'}">
+    <section class="elevation-10"
+             :style="[$vuetify.breakpoint.lgAndUp ?
+             { padding: '50px',width: '100%', backgroundSize: '100%', backgroundImage: 'url(' + require('@/assets/img/paper2.jpg') + ')'} :
+             { padding: '50px',width: '100%'}]">
       <v-layout column align-center justify-center class="my-2">
-        <h1 class="display-2 text-xs-center black--text">10 Questions to Myself</h1>
+        <h1 class="display-2 text-xs-center black--text">8 Questions to Myself</h1>
         <v-layout row wrap class="my-5" align-center text-xs-center>
           <v-flex md6 style="padding: 20px;">
             <h2>What are your productivity secrets?</h2>
@@ -109,10 +111,6 @@
               I think augmented and mixed reality are going to play a huge role in our future and I'm excited to play a
               part in developing this.
             </p>
-            <h2>What song is stuck in your head right now?</h2>
-            <p class="text-xs-center">
-              SOS by Avicii, the first post-mortem single.
-            </p>
             <h2>Does understanding code help you in other areas of your life?</h2>
             <p class="text-xs-center">
               I think programming helps you in analyzing problems by breaking them down into sub-problems and then
@@ -122,10 +120,7 @@
             <p class="text-xs-center">
               Usually I watch YouTube videos or sometimes take courses on Udemy or Udacity and then learn by trial and
               error.
-            </p><br><br>
-            <v-btn dark class="gradient gradient-blue" large round to="/education" @click="expandDrawer">
-              Education & Career
-            </v-btn>
+            </p>
           </v-flex>
           <v-flex md6 style="padding: 20px;">
             <h2>Early Bird or Night Owl?</h2>
@@ -139,23 +134,14 @@
               University taught me lot's of principles and theoretical knowledge. However, the skill to actually plan
               and program systems comes from doing practical projects.
             </p>
-
             <h2>How do you get unstuck on a problem?</h2>
             <p class="text-xs-center">
               I go to the gym or do some other sport activity.
             </p>
-            <h2>What experience made you doubt your skills?</h2>
-            <p class="text-xs-center">
-              Some university exams were very hard for me and I had to study a lot form them. In retrospect, I would say
-              this was due to a lack of interest and me focusing on other projects.
-            </p>
             <h2>What was the last book you read?</h2>
             <p class="text-xs-center">
               The Industries of the Future by Alec Ross
-            </p><br>
-            <v-btn dark class="gradient gradient-blue" large round to="/goals2019" @click="expandDrawer">
-              My 2019 Goals
-            </v-btn>
+            </p>
           </v-flex>
         </v-layout>
       </v-layout>
@@ -167,80 +153,77 @@
       :style="{ width: '100%', /*backgroundSize: '100%', backgroundImage: 'url(' + require('@/assets/img/buildings.jpg') + ')'*/}">
       <v-container fill-height fill-width>
         <v-layout column wrap class="my-5">
-          <h1
-            :style="{ paddingBottom: '40px', paddingTop: '20px', paddingLeft: '300px', paddingRight: '300px', backgroundPosition: '50% 0px', backgroundImage: 'url(' + require('@/assets/img/stroke4.png') + ')'}"
-            class="display-2 text-xs-center white--text">My Work</h1><br>
-          <v-layout row wrap class="my-2" align-center>
-            <v-flex md6 align-center>
-              <v-layout column align-center justify-center class="black--text">
-                <h1 class="display-1 text-xs-center">Artificial Intelligence</h1>
-                <p class="text-xs-center">The potential of Artificial Intelligence is almost endless. I like to
-                  combine
-                  different technologies in a creative way to solve problems and automate tasks of everyday
-                  life.</p>
-                <v-layout row>
-                  <v-btn dark class="gradient gradient-green" large round to="/projects/exploxcycling"
-                         @click="expandDrawer">
-                    Project ExploX
-                  </v-btn>
+          <h1 class="display-2 text-xs-center white--text"
+            :style="{ paddingTop: '20px', paddingBottom: '50px', backgroundPosition: '50% -10px', backgroundImage: 'url(' + require('@/assets/img/stroke4.png') + ')'}">
+            My Work</h1><br>
+          <v-container grid-list-xl>
+            <v-layout row wrap class="my-2" align-center>
+              <v-flex xs12 md6 align-center>
+                <v-layout column align-center justify-center class="black--text">
+                  <h1 class="display-1 text-xs-center">Artificial Intelligence</h1>
+                  <p class="text-xs-center">The potential of Artificial Intelligence is almost endless. I like to
+                    combine
+                    different technologies in a creative way to solve problems and automate tasks of everyday
+                    life.</p>
+                  <v-layout row>
+                    <v-btn dark class="gradient gradient-green" large round to="/projects/exploxcycling"
+                           @click="expandDrawer">
+                      Project ExploX
+                    </v-btn>
+                  </v-layout>
                 </v-layout>
-              </v-layout>
-            </v-flex>
-          </v-layout>
-          <v-layout row wrap class="my-5" align-center>
-            <v-flex md6>
-              <img src="@/assets/img/genx-gradient-compositions0-.jpg" alt="Vuetify.js" width="100%">
-            </v-flex>
-            <v-flex md6>
-              <v-layout column align-center justify-center class="black--text">
-                <h1 class="display-1 text-xs-center">Ubiquitous Computing</h1>
-                <p class="text-xs-center">Ubiquitous technologies are everywhere, they are part of our daily lives
-                  and
-                  support us in many ways. I like working with and exploring the potential of wearables in
-                  different
-                  contexts such as gaming or sports.</p>
-                <v-layout row>
-
-                  <v-btn dark class="gradient gradient-blue" large round to="/projects/smartdoorbell"
-                         @click="expandDrawer">
-                    Smart Doorbell
-                  </v-btn>
-                  <v-btn dark class="gradient gradient-blue" large round to="/projects/mazegaze"
-                         @click="expandDrawer">
-                    Maze Gaze
-                  </v-btn>
+              </v-flex>
+            </v-layout>
+            <v-layout row wrap class="my-5" align-center>
+              <v-flex xs12 md6>
+                <img src="@/assets/img/genx-gradient-compositions0-.jpg" alt="Vuetify.js" width="100%">
+              </v-flex>
+              <v-flex xs12 md6>
+                <v-layout column align-center justify-center class="black--text">
+                  <h1 class="display-1 text-xs-center">Ubiquitous Computing</h1>
+                  <p class="text-xs-center">Ubiquitous technologies are everywhere, they are part of our daily lives
+                    and
+                    support us in many ways. I like working with and exploring the potential of wearables in
+                    different
+                    contexts such as gaming or sports.</p>
+                  <v-layout row>
+                    <v-btn dark class="gradient gradient-blue" large round to="/projects/smartdoorbell"
+                           @click="expandDrawer">
+                      Smart Doorbell
+                    </v-btn>
+                  </v-layout>
                 </v-layout>
-              </v-layout>
-            </v-flex>
-          </v-layout>
-          <v-layout row wrap class="my-5" align-center>
-            <v-flex md6>
-              <v-layout column align-center justify-center class="black--text">
-                <h1 class="display-1 text-xs-center">Didactic Technologies</h1>
-                <p class="text-xs-center">The connection of computer science and didactics is the area that I
-                  pursue
-                  professionally. I believe that technology can greatly enhanve the way we teach and learn. My
-                  focus is
-                  on AI powered didactics and Augmented Reality.</p>
-                <v-layout row>
-                  <v-btn dark class="gradient gradient-orange" large round to="/projects/soho"
-                         @click="expandDrawer">
-                    Project SoHo
-                  </v-btn>
+              </v-flex>
+            </v-layout>
+            <v-layout row wrap class="my-5" align-center>
+              <v-flex md6>
+                <v-layout column align-center justify-center class="black--text">
+                  <h1 class="display-1 text-xs-center">Didactic Technologies</h1>
+                  <p class="text-xs-center">The connection of computer science and didactics is the area that I
+                    pursue
+                    professionally. I believe that technology can greatly enhanve the way we teach and learn. My
+                    focus is
+                    on AI powered didactics and Augmented Reality.</p>
+                  <v-layout row>
+                    <v-btn dark class="gradient gradient-orange" large round to="/projects/soho"
+                           @click="expandDrawer">
+                      Project SoHo
+                    </v-btn>
+                  </v-layout>
                 </v-layout>
-              </v-layout>
-            </v-flex>
-          </v-layout>
+              </v-flex>
+            </v-layout>
+          </v-container>
         </v-layout>
       </v-container>
     </section>
 
     <!-- Principles -->
-    <section class="elevation-20" style="background-color: #e1e1e1">
+    <section class="elevation-10" style="background-color: #e1e1e1">
       <v-container fill-height fill-width>
         <v-layout column wrap class="my-5" align-center>
           <v-flex xs12>
-            <h1 class="display-2 text-xs-center">The Six Principles</h1><br>
+            <h1 class="display-2 text-xs-center">The 6 Principles</h1><br>
             <v-container grid-list-xl>
               <v-layout row wrap align-center>
                 <v-flex xs12 md4>
@@ -364,7 +347,7 @@
       <v-container fill-height fill-width>
         <v-layout column wrap class="my-5" align-center>
           <h1
-            :style="{  paddingTop: '40px', paddingBottom: '50px', paddingLeft: '300px', paddingRight: '300px', backgroundPosition: '50% -00px', backgroundImage: 'url(' + require('@/assets/img/stroke3.png') + ')'}"
+            :style="{  paddingTop: '40px', paddingBottom: '50px', backgroundPosition: '50% -00px', backgroundImage: 'url(' + require('@/assets/img/stroke3.png') + ')'}"
             class="display-2 text-xs-center white--text">Get Shit Done</h1><br>
           <h1 class="subheading text-xs-center">Some cool things I achieved lately</h1>
           <v-container fluid grid-list-md>

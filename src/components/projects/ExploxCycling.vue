@@ -20,7 +20,7 @@
           <v-container grid-list-xl>
             <v-layout row wrap align-center>
               <v-flex xs12 md4>
-                <v-card class="elevation-5 gradient-no-switch gradient-dark" dark style="padding: 20px;">
+                <v-card class="elevation-5 gradient-no-switch gradient-dark" dark style="padding: 40px 20px 20px; min-height: 400px; max-height: 450px;">
                   <v-card-text class="text-xs-center">
                     <v-icon x-large class="text--lighten-2">gesture</v-icon>
                   </v-card-text>
@@ -38,7 +38,7 @@
                 </v-card>
               </v-flex>
               <v-flex xs12 md4>
-                <v-card class="elevation-5 gradient-no-switch gradient-dark" dark style="padding: 20px;">
+                <v-card class="elevation-5 gradient-no-switch gradient-dark" dark style="padding: 40px 20px 20px; min-height: 400px; max-height: 450px;">
                   <v-card-text class="text-xs-center">
                     <v-icon x-large class="text--lighten-2">map</v-icon>
                   </v-card-text>
@@ -55,7 +55,7 @@
                 </v-card>
               </v-flex>
               <v-flex xs12 md4>
-                <v-card class="elevation-5 gradient-no-switch gradient-dark" dark style="padding: 20px;">
+                <v-card class="elevation-5 gradient-no-switch gradient-dark" dark style="padding: 40px 20px 20px; min-height: 400px; max-height: 450px;">
                   <v-card-text class="text-xs-center">
                     <v-icon x-large class="text--lighten-2">flag</v-icon>
                   </v-card-text>

@@ -1,8 +1,8 @@
 <template>
   <Header>
     <div v-on:mouseover="expandDrawer()" v-on:mouseleave="collapseDrawer()">
-      <v-navigation-drawer :mini-variant.sync="mini" app
-                           class="elevation-0" v-bind:style="getStyle" :clipped="$vuetify.breakpoint.lgAndUp">
+      <v-navigation-drawer :mini-variant.sync="mini" app clipped
+                           class="elevation-0" v-bind:style="getStyle" v-model="drawer">
         <v-list dense>
           <template v-for="item in items">
             <div>
@@ -48,9 +48,10 @@
       </v-navigation-drawer>
     </div>
 
-    <v-toolbar style="z-index: 100; background-color: white" :clipped-left="$vuetify.breakpoint.lgAndUp" app>
+    <v-toolbar style="z-index: 100; background-color: white" :clipped-left="$vuetify.breakpoint.lgAndUp" app
+    >
       <v-toolbar-title style="width: 300px" class="ml-0 pl-3">
-        <v-toolbar-side-icon @click.stop="() => {drawer = !drawer; toggleDrawer();}"></v-toolbar-side-icon>
+        <v-toolbar-side-icon @click.stop="() => {toggleDrawer();}"></v-toolbar-side-icon>
         <!--<span v-if="user">
           <router-link to="/hub" class="hidden-sm-and-down brand">&nbsp;Alpha Implement</router-link>
           <img src="@/assets/img/logo_small.png" style="margin-bottom: -5px;" height="25px;"
@@ -129,131 +130,147 @@
   </Header>
 </template>
 
-<script>
-  import LogIn from '../profile/LogIn'
-  import {EventBus} from '@/eventBus.js'
-  import apiMixin from '../../mixins/apiMixin'
+<script>var drawer
 
-  export default {
-    components: {LogIn},
-    data: () => ({
-      mini: true,
-      editDialog: false,
-      drawer: false,
-      loginMenu: false,
-      notificationMenu: false,
-      items: [
-        {icon: 'fingerprint', text: 'Home', link: '', loginOnly: false},
-        {icon: 'school', text: 'Education & Career', link: 'education', loginOnly: false},
-        {icon: 'video_library', text: 'Blog & Videos', link: 'blog', loginOnly: false},
-        {icon: 'cloud_download', text: 'Products', link: 'products', loginOnly: false},
-        {
-          loginOnly: false,
-          icon: 'keyboard_arrow_up',
-          'icon-alt': 'keyboard_arrow_down',
-          text: 'Projects',
-          model: true,
-          children: [
-            // {icon: 'near_me', text: 'Digital Wellbeing Concept', link: 'projects/digitalwellbeing', loginOnly: false},
-            {icon: 'code', text: 'Alien Maker', link: 'projects/alienmaker', loginOnly: false},
-            {icon: 'code', text: 'Alpha Implement', link: 'projects/alphaimplement', loginOnly: false},
-            {icon: 'code', text: 'ExploX Cycling', link: 'projects/exploxcycling', loginOnly: false},
-            {icon: 'code', text: 'Vue Express Upstarter', link: 'projects/vueupstarter', loginOnly: false},
-            {icon: 'more_horiz', text: 'More Projects', link: 'projects/more', loginOnly: false},
-          ]
-        },
-        {
-          loginOnly: false,
-          icon: 'keyboard_arrow_up',
-          'icon-alt': 'keyboard_arrow_down',
-          text: 'Goals and Resolutions',
-          model: false,
-          children: [
-            {icon: 'format_list_bulleted', text: 'Goals Spring 2019', link: 'goals/spring2019', loginOnly: false},
-            {icon: 'done_all', text: 'Report Spring 2019', link: 'goals/reports/january2019', loginOnly: false},
-          ]
-        },
-        {icon: 'chat_bubble', text: 'Contact', link: 'contact', loginOnly: false},
-        {icon: 'help', text: 'About', link: 'about', loginOnly: false},
-      ]
-    }),
-    props: {
-      source: String,
-      user: Object
-    },
-    created () {
-      console.log(this.$router.currentRoute.name)
-      this.mini = true;
-      this.drawer = false;
-      EventBus.$on('expandDrawer', () => {
-        this.expandDrawer()
-      })
-      EventBus.$on('collapseDrawer', () => {
-        this.collapseDrawer()
-      })
-    },
-    computed: {
-      getStyle () {
-        if (this.$vuetify.breakpoint.lgAndUp) {
-          return {'z-index': 99,}
-        } else {
-          return {'z-index': 101,}
-        }
+import LogIn from '../profile/LogIn'
+import {EventBus} from '@/eventBus.js'
+import apiMixin from '../../mixins/apiMixin'
+
+export default {
+  components: {LogIn},
+  data: () => ({
+    mini: true,
+    editDialog: false,
+    drawer: false,
+    drawerPermanent: false,
+    loginMenu: false,
+    notificationMenu: false,
+    items: [
+      {icon: 'fingerprint', text: 'Home', link: '', loginOnly: false},
+      {icon: 'school', text: 'Education & Career', link: 'education', loginOnly: false},
+      {icon: 'video_library', text: 'Blog & Videos', link: 'blog', loginOnly: false},
+      {icon: 'cloud_download', text: 'Products & Open Source', link: 'products', loginOnly: false},
+      {
+        loginOnly: false,
+        icon: 'keyboard_arrow_up',
+        'icon-alt': 'keyboard_arrow_down',
+        text: 'Projects',
+        model: true,
+        children: [
+          // {icon: 'near_me', text: 'Digital Wellbeing Concept', link: 'projects/digitalwellbeing', loginOnly: false},
+          {icon: 'code', text: 'Alien Maker', link: 'projects/alienmaker', loginOnly: false},
+          {icon: 'code', text: 'Alpha Implement', link: 'projects/alphaimplement', loginOnly: false},
+          {icon: 'code', text: 'ExploX Cycling', link: 'projects/exploxcycling', loginOnly: false},
+          {icon: 'code', text: 'Vue Express Upstarter', link: 'projects/vueupstarter', loginOnly: false},
+          {icon: 'more_horiz', text: 'More Projects', link: 'projects/more', loginOnly: false},
+        ]
       },
-      notifications () {
-        let notifications = []
-        if (this.user) {
-          if (this.user.notifications.length === 0) {
-            notifications.push({header: 'No new notifications'})
-          } else {
-            notifications.push({header: 'Notifications'})
-            this.user.notifications.forEach((notification) => {
-              notifications.push(notification)
-              if (!notification.header) {
-                notifications.push({
-                  divider: true, inset: true
-                })
-              }
-            })
-          }
-        }
-        return notifications
+      {
+        loginOnly: false,
+        icon: 'keyboard_arrow_up',
+        'icon-alt': 'keyboard_arrow_down',
+        text: 'Goals and Resolutions',
+        model: false,
+        children: [
+          {icon: 'format_list_bulleted', text: 'Goals Spring 2019', link: 'goals/spring2019', loginOnly: false},
+          {icon: 'done_all', text: 'Report Spring 2019', link: 'goals/reports/january2019', loginOnly: false},
+        ]
+      },
+      {icon: 'chat_bubble', text: 'Contact', link: 'contact', loginOnly: false},
+      {icon: 'help', text: 'About', link: 'about', loginOnly: false},
+    ]
+  }),
+  props: {
+    source: String,
+    user: Object
+  },
+  created () {
+    console.log(this.$router.currentRoute.name)
+    this.mini = this.$vuetify.breakpoint.lgAndUp;
+    this.drawer = this.$vuetify.breakpoint.lgAndUp;
+    this.drawerPermanent = false;
+    EventBus.$on('expandDrawer', () => {
+      this.expandDrawer()
+    })
+    EventBus.$on('collapseDrawer', () => {
+      this.collapseDrawer()
+    })
+  },
+  computed: {
+    getStyle () {
+      if (this.$vuetify.breakpoint.lgAndUp) {
+        return {'z-index': 99,}
+      } else {
+        return {'z-index': 101,}
       }
     },
-    methods: {
-      expandDrawer () {
+    notifications () {
+      let notifications = []
+      if (this.user) {
+        if (this.user.notifications.length === 0) {
+          notifications.push({header: 'No new notifications'})
+        } else {
+          notifications.push({header: 'Notifications'})
+          this.user.notifications.forEach((notification) => {
+            notifications.push(notification)
+            if (!notification.header) {
+              notifications.push({
+                divider: true, inset: true
+              })
+            }
+          })
+        }
+      }
+      return notifications
+    }
+  },
+  methods: {
+    expandDrawer () {
+      if (this.$vuetify.breakpoint.lgAndUp) {
         this.mini = false
-      },
-      collapseDrawer () {
-        if (!this.drawer) {
-          this.mini = true
-        }
-      },
-
-      toggleDrawer () {
-        console.log('Toggle')
-
-        if (this.mini || this.drawer) {
-          this.expandDrawer()
-        } else {
-          this.collapseDrawer()
-        }
-      },
-      async dismissNotifications () {
-        const formData = {
-          _csrf: this.csrfToken,
-          notifications: [],
-        }
-
-        this.PUT('users/' + this.user._id, formData, null, (data, err) => {
-          if (!err) {
-            this.user.notifications = []
-          }
-        })
+      } else {
+        this.drawerPermanent = false
       }
     },
-    mixins: [apiMixin]
-  }
+    collapseDrawer () {
+      if (!this.drawerPermanent) {
+        if (this.$vuetify.breakpoint.lgAndUp) {
+          this.mini = true
+        } else {
+          this.drawerPermanent = false
+        }
+      }
+    },
+
+    toggleDrawer () {
+      console.log('Toggle')
+      this.drawerPermanent = !this.drawerPermanent
+      if (!this.$vuetify.breakpoint.lgAndUp) {
+        this.mini = false
+        this.drawer = !this.drawer
+      }
+
+      if (this.mini || this.drawerPermanent) {
+        this.expandDrawer()
+      } else {
+        this.collapseDrawer()
+      }
+    },
+    async dismissNotifications () {
+      const formData = {
+        _csrf: this.csrfToken,
+        notifications: [],
+      }
+
+      this.PUT('users/' + this.user._id, formData, null, (data, err) => {
+        if (!err) {
+          this.user.notifications = []
+        }
+      })
+    }
+  },
+  mixins: [apiMixin]
+}
 </script>
 
 <style scoped>

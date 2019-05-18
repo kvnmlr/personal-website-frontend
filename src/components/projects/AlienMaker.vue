@@ -8,7 +8,8 @@
           <div class="white--text subheading mb-5 text-xs-center">Konzept und Umsetzung der drei Beispiele für den
             Kita-Bereich<br>auf der Didacta Bildungsmesse 2019
           </div>
-          <v-btn class="gradient gradient-blue" style="width: 300px;" large round dark to="/guide" @click="expandDrawer">
+          <v-btn class="gradient gradient-blue" style="width: 300px;" large round dark to="/guide"
+                 @click="expandDrawer">
             Zum Video
           </v-btn>
         </v-layout>
@@ -25,9 +26,8 @@
           </v-card-title>
           <v-card-text class="title text-xs-center justify-center">
             Die Beispiele des „Kita-Bereichs“ auf der Didacta 2019 greifen die Zielsetzung, Kompetenzen zu vermitteln
-            und persönliche Ressourcen zu stärken (Gemeinsamer Rahmen der Länder für die frühe Bildung in
-            Kindertageseinrichtungen, KMK 2004) auf, indem sie mit jeweils anderen Schwerpunkten, grundlegende
-            Kompetenzen fördern und Vorläuferfertigkeiten stärken.<br><br>
+            und persönliche Ressourcen zu stärken auf, indem sie mit jeweils anderen Schwerpunkten, <b>grundlegende
+            Kompetenzen fördern und Vorläuferfertigkeiten stärken.</b><br><br>
           </v-card-text>
         </v-card>
       </v-layout>
@@ -43,7 +43,7 @@
             <v-layout row wrap align-center>
               <v-flex xs12 md4>
                 <v-card class="gradient-no-switch gradient-green"
-                        style="padding: 20px; min-height: 340px; max-height: 430px;" dark>
+                        style="padding: 20px; min-height: 370px; max-height: 450px;" dark>
                   <v-card-text class="text-xs-center">
                   </v-card-text>
                   <v-card-title primary-title class="layout justify-center">
@@ -58,7 +58,7 @@
               </v-flex>
               <v-flex xs12 md4>
                 <v-card class="gradient-no-switch gradient-blue"
-                        style="padding: 20px; min-height: 340px; max-height: 430px;" dark>
+                        style="padding: 20px; min-height: 370px; max-height: 450px;" dark>
                   <v-card-text class="text-xs-center">
                   </v-card-text>
                   <v-card-title primary-title class="layout justify-center">
@@ -73,7 +73,7 @@
               </v-flex>
               <v-flex xs12 md4>
                 <v-card class="gradient-no-switch gradient-orange"
-                        style="padding: 20px; min-height: 340px; max-height: 430px;" dark>
+                        style="padding: 20px; min-height: 370px; max-height: 450px;" dark>
                   <v-card-text class="text-xs-center">
                   </v-card-text>
                   <v-card-title primary-title class="layout justify-center">
@@ -137,23 +137,20 @@
             <v-flex md6>
               <br>
               <h1 class="display-2 text-xs-center black--text">Konzept</h1><br>
-              Die Beispiele des „Kita-Bereichs“ auf der Didacta 2019 greifen die Zielsetzung, Kompetenzen zu vermitteln
-              und
-              persönliche Ressourcen zu stärken (Gemeinsamer Rahmen der Länder für die frühe Bildung in
-              Kindertageseinrichtungen, KMK 2004) auf, indem sie mit jeweils anderen Schwerpunkten, grundlegende
-              Kompetenzen
-              fördern und Vorläuferfertigkeiten stärken. Alle Beispiele des Kita-Bereichs vereinen analog-digitale
-              Bildungsumgebungen auf kindgerechte Weise. Die Kinder erleben digitale Medien nicht gegenstandsgebunden,
-              vielmehr zeigen die Beispiel, wie sich digitale Medien und motorische, gestalterische, sprachliche oder
-              mathema-tische Grunderfahrungen kindgerecht, ganzheitlich und produktiv miteinander verzahnen lassen.<br>
-              Bei Kindergartenkindern sollten informelle, erkundende und spielerische Lernformen vorherrschen, dem
-              entsprechend ist das Bildungsgeschehen in Kitas von Bewegungs- und Sinneserfahrungen geprägt. Für das Kind
-              wechseln sich moderierte Lernarrangements und freie Spielphasen oder andere entwicklungsangemessene
-              Tätigkeiten ab. Dem entsprechend sind die Prototypen des Kita-Standes multimodal und multimedial
-              gestaltet,
-              sie laden zum Spielen ein und fördern gleichzeitig zentrale Kompetenzen.<br>
-              Grundsätzlich sind alle drei Beispiele für alle Altersstufen des Elementarbereichs einsetzbar und für den
-              Übergang zur Grundschule erweiterbar.<br>
+              <p class="text-xs-center">
+                Alle Beispiele des Kita-Bereichs <b>vereinen analogdigitale
+                Bildungsumgebungen auf kindgerechte Weise</b>. Die Kinder erleben digitale Medien nicht gegenstandsgebunden,
+                vielmehr zeigen die Beispiel, wie sich digitale Medien und motorische, gestalterische, sprachliche oder
+                mathematische Grunderfahrungen kindgerecht, ganzheitlich und produktiv miteinander verzahnen
+                lassen.<br><br>
+                Bei Kindergartenkindern sollten informelle, erkundende und spielerische Lernformen vorherrschen, dem
+                entsprechend ist das Bildungsgeschehen in Kitas von Bewegungs- und Sinneserfahrungen geprägt. Für das
+                Kind
+                wechseln sich moderierte Lernarrangements und freie Spielphasen oder andere entwicklungsangemessene
+                Tätigkeiten ab.<br><br><b>Dem entsprechend sind die Prototypen des Kita-Standes multimodal und multimedial
+                gestaltet,
+                sie laden zum Spielen ein und fördern gleichzeitig zentrale Kompetenzen.</b><br>
+              </p>
               <div class="separator"></div>
               <h1 class="display-1 text-xs-center" style="color: #54B4DE">Die Rakete</h1><br>
               <p class="text-xs-center">Dieses Beispiel adressiert schwerpunktmäßig die Bildungsbereiche Medien,
@@ -172,9 +169,8 @@
             </v-flex>
           </v-layout>
           <div class="separator"></div>
-          <div class="separator"></div>
           <v-layout row wrap class="my-2">
-            <v-flex sm0 md5>
+            <v-flex v-if="$vuetify.breakpoint.lgAndUp" sm0 md5>
               <img class="elevation-10" src="@/assets/img/projects/alienmaker/cockpit.png" alt="Vuetify.js"
                    width="100%">
             </v-flex>
@@ -189,6 +185,10 @@
                 individuelles Monster ausdrucken und als Ausmalvorlage nutzen. Am Cockpittisch werden für den Übergang
                 von Elementar- zu Primarbereich grundlegende Kompetenzen gefördert, wie z.B. Förderung von Wahrnehmung,
                 Denkfähigkeit, Gedächtnis, Neugierde, Problemlösung, Greifen und Legen..</p><br>
+              <v-flex v-if="!$vuetify.breakpoint.lgAndUp" sm0 md5>
+                <img class="elevation-10" src="@/assets/img/projects/alienmaker/cockpit.png" alt="Vuetify.js"
+                     width="100%">
+              </v-flex>
               <div class="separator"></div>
               <h1 class="display-1 text-xs-center" style="color: #54B4DE">Die interaktive Kletterwand</h1><br>
               <p class="text-xs-center">Dieses Beispiel adressiert schwerpunktmäßig die Bildungsbereiche Medien,
@@ -199,8 +199,6 @@
                 Limo“), die thematisch eingebettet zum Experimentieren mit Sprache anregen, Reime einüben und die
                 phonologische Bewusstheit anbahnen.</p>
             </v-flex>
-
-
           </v-layout>
 
         </v-layout>
@@ -234,8 +232,6 @@
         </v-layout>
       </v-parallax>
     </section>
-    <div class="separator"></div>
-
   </div>
 </template>
 

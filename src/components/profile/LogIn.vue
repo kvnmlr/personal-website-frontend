@@ -56,7 +56,7 @@
     name: 'LogIn',
     components: {},
     data: () => ({
-      drawer: null,
+      drawerPermanent: null,
       email: '',
       password: '',
       error: null,

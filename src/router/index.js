@@ -1,13 +1,14 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import About from '../components/general/About'
-import Home from '../components/general/home/Education'
+import Education from '../components/general/home/Education'
+import Products from '../components/general/Products'
 import Landing from '../components/general/Landing'
 import Posts from '../components/posts/List'
 import PostDetails from '../components/posts/PostDetails'
 import Creator from '../components/posts/Creator'
 import Admin from '../components/profile/admin/Admin'
-import Education from '../components/profile/user/Dashboard'
+import Dashboard from '../components/profile/user/Dashboard'
 import Contact from '../components/general/Feedback'
 import SignUp from '../components/profile/SignUp'
 import LogIn from '../components/profile/LogIn'
@@ -32,12 +33,17 @@ export default new Router({
     {
       path: '/home',
       name: 'Home',
-      component: Home
+      component: Landing
     },
     {
       path: '/education',
       name: 'Education',
-      component: Home
+      component: Education
+    },
+    {
+      path: '/products',
+      name: 'Products',
+      component: Products
     },
     {
       path: '/about',
@@ -71,8 +77,8 @@ export default new Router({
     },
     {
       path: '/dashboard',
-      name: 'Education',
-      component: Education
+      name: 'Dashbaord',
+      component: Dashboard
     },
     {
       path: '/signup',

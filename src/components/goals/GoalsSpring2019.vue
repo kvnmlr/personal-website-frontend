@@ -30,24 +30,25 @@
           <div class="separator" style="margin-bottom: 80px;"></div>
 
           <section v-for="category in categories">
-            <h4 class="display-1 text-xs-center">{{ category.name }}</h4>
+            <h4 :class="`display-1 text-xs-center ${category.color}--text`">{{ category.name }}</h4>
             <br>
             <v-layout row wrap>
-              <v-flex md4>
+              <v-flex xs12 md4>
                 <v-layout align-center justify-center class="white--text">
-                  <v-progress-circular :rotate="360" :size="200" :width="15" :value="category.progress" color="teal">
+                  <v-progress-circular :rotate="360" :size="200" :width="15" :value="category.progress" :color="category.color"
+                  style="margin-bottom: 20px;">
                     {{ category.progress }}%
                   </v-progress-circular>
                 </v-layout>
 
               </v-flex>
-              <v-flex md8>
+              <v-flex xs12 md8>
                 <div v-for="(item,i) in category.items" :key="i">
 
                   <v-expansion-panel>
                     <v-expansion-panel-content>
-                      <v-icon v-if="item.complete" slot="actions" color="teal">done</v-icon>
-                      <v-icon v-else slot="actions" color="primary">$vuetify.icons.expand</v-icon>
+                      <v-icon v-if="item.complete" slot="actions" color="green">done</v-icon>
+                      <v-icon v-else slot="actions" color="grey">$vuetify.icons.expand</v-icon>
                       <div slot="header">{{ item.header }}</div>
                       <v-card>
                         <v-card-text style="color: darkgray">{{ item.text }}</v-card-text>
@@ -80,6 +81,7 @@
         panel: [],
         categories: [
           {
+            color: 'blue',
             name: 'Master of Science',
             progress: Math.floor(2 / 3 * 100),
             items: [
@@ -101,6 +103,7 @@
             ]
           },
           {
+            color: 'orange',
             name: 'Software Development',
             progress: Math.floor(0.0 / 4 * 100),
             items: [
@@ -127,6 +130,7 @@
             ]
           },
           {
+            color: 'green',
             name: 'Work and Career',
             progress: Math.floor(0.0 / 1 * 100),
             items: [
