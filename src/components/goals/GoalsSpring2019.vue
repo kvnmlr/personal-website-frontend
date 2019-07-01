@@ -1,10 +1,10 @@
 <template>
   <div>
     <section>
-      <v-parallax :src="require('@/assets/img/genx-gradient-compositions3-.jpg')" height="400">
+      <v-parallax :src="require('@/assets/img/goals_cover.jpg')" height="400">
         <v-layout column align-center justify-center class="white--text">
-          <h1 class="black--text mb-2 display-3 text-xs-center">My Goals and Resolutions</h1>
-          <div class="black--text subheading mb-3 text-xs-center">Spring 2019</div>
+          <h1 class="black--text mb-2 display-3 text-xs-center white--text">My Goals and Resolutions</h1>
+          <div class="black--text subheading mb-3 text-xs-center white--text">Spring 2019</div>
         </v-layout>
       </v-parallax>
     </section>

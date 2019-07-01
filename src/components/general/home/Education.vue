@@ -1,7 +1,7 @@
 <template>
   <div>
     <section>
-      <v-parallax :src="require('@/assets/img/genx-gradient-compositions3-.jpg')" height="400">
+      <v-parallax :src="require('@/assets/img/education_cover.jpg')" height="400">
         <v-layout column align-center justify-center class="white--text">
           <h1 class="white--text mb-2 display-3 text-xs-center">Education and Career</h1>
           <div class="white--text subheading mb-3 text-xs-center">Last updated: 2019/01</div>
@@ -16,7 +16,7 @@
           <!-- Quote -->
           <section>
             <v-layout column align-center justify-center>
-              <v-card class="elevation-10 gradient-no-switch" style="margin-top: -70px;" width="70%">
+              <v-card class="elevation-10 gradient-no-switch gradient-slight-accent" style="margin-top: -80px;" width="70%">
                 <v-card-title primary-title class="layout justify-center">
                   <p align="center" class="subheading align-center">These are my goals and resolutions for the first
                     half of 2019 ... well, at least

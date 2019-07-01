@@ -1,15 +1,14 @@
 <template>
   <div>
     <section>
-      <v-parallax :src="require('@/assets/img/genx-gradient-compositions4-.jpg')" height="500">
+      <v-parallax :src="require('@/assets/img/products_cover.jpg')" height="400">
         <v-layout column align-center justify-center class="white--text">
-          <img src="@/assets/img/logo_standard.png" alt="Vuetify.js" height="100">
-          <h1 class="black--text mb-2 display-3 text-xs-center">Products and Downloads</h1>
-          <div class="black--text subheading mb-3 text-xs-center">To Help You Be Awesome and Get Shit Done</div>
-          <div class="separator"></div>
+          <h1 class="mb-2 display-3 text-xs-center white--text">Products and Downloads</h1>
+          <div class="subheading mb-3 text-xs-center white--text">To Help You Be Awesome and Get Shit Done</div>
         </v-layout>
       </v-parallax>
     </section>
+
 
     <!-- Spotlight -->
     <section
@@ -17,9 +16,8 @@
       <v-container fill-height fill-width>
         <v-layout column wrap class="my-5">
           <h1
-            :style="{ paddingTop: '20px', paddingBottom: '50px', backgroundPosition: '50% -10px',
-            backgroundImage: 'url(' + require('@/assets/img/stroke2.png') + ')'}"
-            class="display-2 text-xs-center white--text">Products</h1><br>
+            :style="{ paddingTop: '20px', paddingBottom: '50px', backgroundPosition: '50% -10px'}"
+            class="display-2 text-xs-center">Products</h1><br>
           <v-container grid-list-xl>
             <v-layout row wrap align-center>
               <v-flex v-for="(product, i) in products" v-bind:key="i" xs12 md6>
@@ -43,10 +41,10 @@
                     </div>
                   </v-card-text>
                   <v-card-actions class="layout justify-center">
-                    <v-btn v-if="product.page" class="gradient gradient-blue" dark round large>Get it on
+                    <v-btn v-if="product.page" class="gradient gradient-accent" dark round large>Get it on
                       {{ product.page }}
                     </v-btn>
-                    <v-btn v-else class="gradient gradient-blue" dark round large>Learn More</v-btn>
+                    <v-btn v-else class="gradient gradient-accent" dark round large>Learn More</v-btn>
                   </v-card-actions>
                   <br>
                 </v-card>
@@ -66,7 +64,7 @@
       <v-container fill-height fill-width>
         <v-layout column wrap class="my-5">
           <h1
-            :style="{ paddingTop: '20px', paddingBottom: '50px', backgroundPosition: '50% -10px', backgroundImage: 'url(' + require('@/assets/img/stroke2.png') + ')'}"
+            :style="{ paddingTop: '20px', paddingBottom: '50px', backgroundPosition: '50% -10px'}"
             class="display-2 text-xs-center white--text">Open Source</h1><br>
           <v-container grid-list-xl>
             <v-layout row wrap align-center>
@@ -108,7 +106,7 @@
                 <div class="black--text subheading mb-3 text-xs-center">
                   Do you have any questions about the products?
                 </div>
-                <v-btn class="gradient gradient-green" style="width: 100%; margin-bottom: -20px" large round
+                <v-btn class="gradient gradient-primary" style="width: 100%; margin-bottom: -20px" large round
                        to="/contact" dark
                        @click="expandDrawer">
                   Contact Me
@@ -135,7 +133,7 @@
     components: {UnderConstruction, Explanation, Welcome,},
 
     data: () => ({
-      projects: [
+      products: [
         {
           title: 'Developer Portfolio Mastery Course',
           text: 'I think programming helps you in analyzing problems by breaking them down into sub-problems and then ' +

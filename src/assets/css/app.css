@@ -8,6 +8,7 @@
 }
 
 a {
+  color: #02B4E2;
   text-decoration: none;
 }
 
@@ -16,15 +17,15 @@ h1 {
 }
 
 h2 {
-  color: #54B4DE;
+  color: #02B4E2;
 }
 
 h3 {
-  color: #88599c;
+  color: #02B4E2;
 }
 
 h4 {
-  color: #49c3b7;
+  color: #02B4E2;
 }
 
 #map {
@@ -42,7 +43,7 @@ h4 {
   z-index: 100;
 }
 
-.separator{
+.separator {
   margin-top: 40px;
   margin-bottom: 40px;
 }
@@ -58,7 +59,7 @@ h4 {
 .gradient-no-switch {
   flex: 1 1 auto;
   transition: width 5.0s;
-  background-size: 200% auto;
+  background-size: 100% auto;
 }
 
 * {
@@ -74,7 +75,7 @@ h4 {
   cursor: pointer;
   margin: 20px;
   height: 55px;
-  text-align:center;
+  text-align: center;
   background-size: 200% 100%;
   border-radius: 50px;
 
@@ -91,24 +92,31 @@ h4 {
   -o-transition: all .2s ease-in-out;
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
-  transform: scale(1.05);
+  /* transform: scale(1.05); */
 }
-
 
 .btn-hover:focus {
   outline: none;
 }
 
 .gradient-orange {
-  background-image: linear-gradient(to right, #cf9679 0%, #a3627b 51%, #8c4b8f 100%);
+  background-image: linear-gradient(to right, #FEC163 0%, #fe7d41 50%);
 }
 
-.gradient-green {
-  background-image: linear-gradient(to right, #49c3b7 0%, #54B4DE 51%, #7B83C1 100%);
+.gradient-primary {
+  background-image: linear-gradient(to right, #02B4E2 0%, #02CCBA 50%);
 }
 
-.gradient-blue {
-  background-image: linear-gradient(to right, #4d94cc 0%, #7676ae 51%, #88599c 100%);
+.gradient-slight-primary {
+  background-image: linear-gradient(to right, #ffffff 0%, #ffffff 50%, rgba(152, 192, 203, 0.38) 100%);
+}
+
+.gradient-slight-accent {
+  background-image: linear-gradient(to right, #ffffff 0%, #ffffff 50%, rgba(217, 133, 141, 0.23) 100%);
+}
+
+.gradient-accent {
+  background-image: linear-gradient(to right, #B051E5 0%, #FA5488 50%);
 }
 
 .gradient-secondary {
@@ -126,13 +134,14 @@ h4 {
 .fade-enter-active, .fade-leave-active {
   transition: opacity 0.5s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
+{
   opacity: 0;
   transition: opacity;
 }
 
-Footer
-{
+Footer {
   clear: both;
   color: White;
   vertical-align: middle;

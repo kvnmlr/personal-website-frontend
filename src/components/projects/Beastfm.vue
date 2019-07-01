@@ -158,7 +158,7 @@
             <v-container grid-list-xl>
               <v-layout row wrap align-center>
                 <v-flex sm12 md12 lg3>
-                  <v-card class="elevation-0 gradient-no-switch gradient-blue text-xs-center align-center"
+                  <v-card class="elevation-0 gradient-no-switch gradient-accent text-xs-center align-center"
                           style="padding: 10px; min-height: 350px;">
                     <v-card-text>
                       <v-icon x-large class="text--lighten-2" style="margin-bottom: -20px;">color_lens</v-icon>
@@ -175,7 +175,7 @@
                   </v-card>
                 </v-flex>
                 <v-flex sm12 md12 lg3>
-                  <v-card class="elevation-0 gradient-no-switch gradient-green text-xs-center align-center"
+                  <v-card class="elevation-0 gradient-no-switch gradient-primary text-xs-center align-center"
                           style="padding: 10px; min-height: 350px;">
                     <v-card-text>
                       <v-icon x-large class="text--lighten-2" style="margin-bottom: -20px;">360</v-icon>
@@ -516,11 +516,11 @@
     background-image: linear-gradient(to right, #5dba77 0%, #4CA06E 51%, #468061 100%);
   }
 
-  .gradient-green {
+  .gradient-primary {
     background-image: linear-gradient(to right, #4fb2d6 0%, #4785b5 51%, #5c75c1 100%);
   }
 
-  .gradient-blue {
+  .gradient-accent {
     background-image: linear-gradient(to right, #56b5cc 0%, #64ae9d 51%, #4a9c82 100%);
   }
 

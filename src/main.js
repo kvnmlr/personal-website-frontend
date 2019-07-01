@@ -20,18 +20,18 @@ Vue.use(Meta);
 Vue.use(VueResource);
 Vue.use(Vuetify, {
   theme: {
-    primary: '#4DA7DC',
-    secondary: '#9C53A2',
-    accent: '#F7BE7B',
-    error: '#9C53A2',
-    warning: '#F7BE7B',
-    info: '#4DA7DC',
-    success: '#49c3b7',
-    blue: '#4DA7DC',
-    orange: '#F7BE7B',
-    red: '#9C53A2',
-    green: '#49c3b7',
-    violet: '#7B83C1'
+    primary: '#02B4E2',
+    secondary: '#DE4313',
+    accent: '#B051E5',
+    error: '#DE4313',
+    warning: '#FEC163',
+    info: '#02B4E2',
+    success: '#02CCBA',
+    blue: '#02B4E2',
+    orange: '#FEC163',
+    red: '#DE4313',
+    green: '#02CCBA',
+    violet: '#B051E5'
   }
 });
 

@@ -7,7 +7,7 @@
     </v-layout>
     <v-layout row wrap>
       <v-flex d-flex xs12 sm6 md6>
-        <v-card class="gradient-no-switch gradient-blue" hover color="primary" to="/dashboard">
+        <v-card class="gradient-no-switch gradient-accent" hover color="primary" to="/dashboard">
           <v-card-title primary class="title">
             <v-icon>person</v-icon>&nbsp;Dashboard
           </v-card-title>

@@ -17,7 +17,7 @@
                   <v-spacer></v-spacer>
                   <span>
             <v-btn class="gradient gradient-orange" round dark v-on:click.prevent="login">Login</v-btn>
-            <v-btn class="gradient gradient-blue" light round to="/signup">Sign Up</v-btn>
+            <v-btn class="gradient gradient-accent" light round to="/signup">Sign Up</v-btn>
           </span>
                 </v-form>
               </v-flex>
@@ -38,7 +38,7 @@
             <v-spacer></v-spacer>
             <span>
             <v-btn class="gradient gradient-orange" dark round v-on:click.prevent="login">Login</v-btn>
-            <v-btn class="gradient gradient-blue" dark round to="/signup">Sign Up</v-btn>
+            <v-btn class="gradient gradient-accent" dark round to="/signup">Sign Up</v-btn>
           </span>
           </v-form>
         </v-flex>

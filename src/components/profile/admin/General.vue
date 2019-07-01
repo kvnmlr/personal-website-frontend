@@ -33,7 +33,7 @@
       <v-container v-if="feedbacks.length > 0" fluid grid-list-md>
         <v-layout column wrap>
           <v-flex v-for="feedback in feedbacks" :key="feedback._id" d-flex xs12>
-            <v-card class="gradient-no-switch gradient-blue">
+            <v-card class="gradient-no-switch gradient-accent">
               <v-card-text>
                 <v-layout row>
                   <v-flex xs10>
@@ -66,7 +66,7 @@
       <v-container v-if="invitations.length > 0" fluid grid-list-md>
         <v-layout column wrap>
           <v-flex v-for="invitation in invitations" :key="invitation._id" d-flex xs12>
-            <v-card class="gradient-no-switch gradient-blue">
+            <v-card class="gradient-no-switch gradient-accent">
               <v-card-text>
                 <p><b>Invitation on </b>{{formatDate(invitation.createdAt)}}
                   <v-chip v-if="invitation.accepted" color="green" text-color="white">Accepted</v-chip>

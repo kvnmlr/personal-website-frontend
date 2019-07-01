@@ -1,24 +1,10 @@
 <template>
   <div>
     <section>
-      <v-parallax :src="require('@/assets/img/buildings.jpg')" height="350">
+      <v-parallax :src="require('@/assets/img/about_cover.jpg')" height="400">
         <v-layout column align-center justify-center class="white--text">
-          <v-container grid-list-xl>
-            <v-layout row wrap justify-center class="my-5" align-center>
-              <v-flex xs12 sm4>
-                <v-card class="elevation-0 transparent">
-                  <v-card-title primary-title class="layout justify-center">
-                    <div class="headline">About Vuetiful</div>
-                  </v-card-title>
-                  <v-card-text>
-                    The Vuetiful website template has many features. Our quick start guide and documentation will get
-                    you
-                    started within minutes.
-                  </v-card-text>
-                </v-card>
-              </v-flex>
-            </v-layout>
-          </v-container>
+          <h1 class="white--text mb-2 display-3 text-xs-center">About Alpha Implement</h1>
+          <div class="white--text subheading mb-3 text-xs-center">Last updated: 2019/01</div>
         </v-layout>
       </v-parallax>
     </section>
@@ -30,9 +16,11 @@
             <v-container grid-list-xl>
               <v-layout row wrap align-center>
                 <v-flex xs12 md6>
-                  <v-card class="elevation-0 transparent">
+                  <v-card style="min-height: 360px; max-height: 450px;" >
+                    <v-card-text class="gradient-no-switch gradient-accent"></v-card-text>
+                    <div class="separator"></div>
                     <v-card-text class="text-xs-center">
-                      <v-icon x-large class="blue--text text--lighten-2">list</v-icon>
+                      <v-icon x-large class="text--lighten-2">list</v-icon>
                     </v-card-text>
                     <v-card-title primary-title class="layout justify-center">
                       <div class="headline text-xs-center">Roadmap</div>
@@ -48,18 +36,36 @@
                   </v-card>
                 </v-flex>
                 <v-flex xs12 md6>
-                  <v-card class="elevation-0 transparent">
+                <v-card style="min-height: 360px; max-height: 450px;" >
+                  <v-card-text class="gradient-no-switch gradient-accent"></v-card-text>
+                  <div class="separator"></div>
+                  <v-card-text class="text-xs-center">
+                    <v-icon x-large class="text--lighten-2">map</v-icon>
+                  </v-card-text>
+                  <v-card-title primary-title class="layout justify-center">
+                    <div class="headline">Contact</div>
+                  </v-card-title>
+                  <v-card-text>
+                    <p>Please use the
+                      <router-link to="feedback">contact form</router-link>
+                      to contact us. Make sure to leave your e-mail address so we can reply to your request.
+                      We are always happy to receive your feedback!<br>
+                    </p>
+                  </v-card-text>
+                </v-card>
+              </v-flex>
+                <v-flex xs12 md12>
+                  <v-card style="min-height: 360px;" >
+                    <v-card-text class="gradient-no-switch gradient-accent"></v-card-text>
+                    <div class="separator"></div>
                     <v-card-text class="text-xs-center">
-                      <v-icon x-large class="blue--text text--lighten-2">map</v-icon>
+                      <v-icon x-large class="text--lighten-2">map</v-icon>
                     </v-card-text>
                     <v-card-title primary-title class="layout justify-center">
-                      <div class="headline">Contact</div>
+                      <div class="headline">Impressum and Legal Information</div>
                     </v-card-title>
                     <v-card-text>
-                      <p>Please use the
-                        <router-link to="feedback">contact form</router-link>
-                        to contact us. Make sure to leave your e-mail address so we can reply to your request.
-                        We are always happy to receive your feedback!<br>
+                      <p>TODO
                       </p>
                     </v-card-text>
                   </v-card>

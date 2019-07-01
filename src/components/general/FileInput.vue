@@ -1,9 +1,9 @@
 <template>
   <div>
-    <v-btn large round light class="gradient gradient-blue" style="width: 95%; height: 60px; vertical-align: bottom" @click="onPickFile" v-if="!fileUrl">
+    <v-btn large round light class="gradient gradient-accent" style="width: 95%; height: 60px; vertical-align: bottom" @click="onPickFile" v-if="!fileUrl">
       {{ selectLabel }}
     </v-btn>
-    <v-btn large round light class="error gradient gradient-blue" style="width: 95%; height: 60px; vertical-align: bottom"
+    <v-btn large round light class="error gradient gradient-accent" style="width: 95%; height: 60px; vertical-align: bottom"
            @click.prevent="removeFile" v-else>
       {{ removeLabel }}
     </v-btn>

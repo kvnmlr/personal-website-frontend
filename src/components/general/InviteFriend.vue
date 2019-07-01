@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-btn style="width: 95%;" class="gradient gradient-blue"
+    <v-btn style="width: 95%;" class="gradient gradient-accent"
            @click.stop="inviteDialog = true" round light>
       <v-icon>people</v-icon>&nbsp;Invite a Friend
     </v-btn>

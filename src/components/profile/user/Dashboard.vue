@@ -43,7 +43,7 @@
                   </v-flex>
                   <v-flex xs2 sm2 md2>
                     <v-menu transition="slide-y-transition" bottom left>
-                      <v-btn class="gradient gradient-blue" light fab relative right slot="activator">
+                      <v-btn class="gradient gradient-accent" light fab relative right slot="activator">
                         <v-icon>more_horiz</v-icon>
                       </v-btn>
                       <v-list>

@@ -16,7 +16,7 @@
               <v-textarea required minlength="10" :rules="[rules.notEmpty]" name="input-7-1" label="Message"
                           v-model="text"></v-textarea>
               <br>
-              <v-btn class="gradient gradient-orange" round large dark v-on:click.prevent="submit">Submit</v-btn>
+              <v-btn class="gradient gradient-primary" round large dark v-on:click.prevent="submit">Submit</v-btn>
             </v-form>
           </v-card-text>
         </v-card>

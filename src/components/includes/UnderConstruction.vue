@@ -9,7 +9,7 @@
               </p>
             </v-flex>
             <v-flex sm12 md4>
-              <v-btn class="gradient gradient-blue" large round v-on:click="() => this.$router.push('/about')">
+              <v-btn class="gradient gradient-accent" large round v-on:click="() => this.$router.push('/about')">
                 <v-icon>info</v-icon>&nbsp;Learn More</v-btn>
             </v-flex>
           </v-layout>

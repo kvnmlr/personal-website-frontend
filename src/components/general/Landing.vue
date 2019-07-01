@@ -1,14 +1,11 @@
 <template>
   <div>
     <section>
-      <v-parallax :src="require('@/assets/img/genx-gradient-compositions4-.jpg')" height="500">
+      <v-parallax :src="require('@/assets/img/landing_cover.jpg')" height="500">
         <v-layout column align-center justify-center class="white--text">
           <img src="@/assets/img/logo_standard.png" alt="Vuetify.js" height="100">
-          <h1 class="black--text mb-2 display-3 text-xs-center">Alpha Implement</h1>
-          <div class="black--text subheading mb-3 text-xs-center">Be Awesome and Get Shit Done</div>
-          <v-btn dark class="gradient gradient-orange" large round to="/guide" @click="expandDrawer">
-            Hot Projects
-          </v-btn>
+          <h1 class="black--text mb-2 display-3 text-xs-center white--text">Alpha Implement</h1>
+          <div class="black--text subheading mb-3 text-xs-center white--text">Be Awesome and Get Shit Done</div>
           <div class="separator"></div>
         </v-layout>
       </v-parallax>
@@ -18,7 +15,8 @@
     <!-- Quote -->
     <section>
       <v-layout column align-center justify-center>
-        <v-card class="elevation-10 gradient-no-switch" style="margin-top: -60px;" width="60%">
+        <v-card class="elevation-10 gradient-no-switch gradient-slight-primary" style="margin-top: -80px; padding: 30px;"
+                width="60%">
           <v-card-title primary-title class="layout justify-center">
             <div class="title">“I think the things you regret most in life are the things you didn’t do.”</div>
           </v-card-title>
@@ -35,15 +33,15 @@
       :style="{ width: '100%', /*backgroundSize: '100%', backgroundImage: 'url(' + require('@/assets/img/buildings.jpg') + ')'*/}">
       <v-container fill-height fill-width>
         <v-layout column wrap class="my-5">
-          <h1
-            :style="{ paddingTop: '20px', paddingBottom: '50px', backgroundPosition: '50% -10px', backgroundImage: 'url(' + require('@/assets/img/stroke2.png') + ')'}"
-            class="display-2 text-xs-center white--text">Spotlight</h1><br>
+          <h1 class="display-2 text-xs-center">Spotlight</h1><br>
           <h1 class="subheading text-xs-center">Currently hot projects worth checking out</h1>
           <v-container grid-list-xl>
             <v-layout row wrap align-center>
               <v-flex xs12 md4>
-                <v-card dark class="gradient-no-switch gradient-blue" style="padding: 40px 20px 20px; min-height: 360px; max-height: 450px;" hover
+                <v-card style="min-height: 360px; max-height: 450px;" hover
                         to="/projects/exploxcycling">
+                  <v-card-text class="gradient-no-switch gradient-accent"></v-card-text>
+                  <div class="separator"></div>
                   <v-card-text class="text-xs-center">
                     <v-icon x-large class="text--lighten-2">directions_bike</v-icon>
                   </v-card-text>
@@ -57,8 +55,10 @@
                 </v-card>
               </v-flex>
               <v-flex xs12 md4>
-                <v-card dark class="gradient-no-switch gradient-green" style="padding: 40px 20px 20px; min-height: 360px; max-height: 450px;" hover
+                <v-card light style="min-height: 360px; max-height: 450px;" hover
                         to="/projects/vueupstarter">
+                  <v-card-text class="gradient-no-switch gradient-accent"></v-card-text>
+                  <div class="separator"></div>
                   <v-card-text class="text-xs-center">
                     <v-icon x-large class="text--lighten-2">desktop_mac</v-icon>
                   </v-card-text>
@@ -72,8 +72,10 @@
                 </v-card>
               </v-flex>
               <v-flex xs12 md4>
-                <v-card dark class="gradient-no-switch gradient-orange" style="padding: 40px 20px 20px; min-height: 360px; max-height: 450px;" hover
+                <v-card light style="min-height: 360px; max-height: 450px;" hover
                         to="/projects/soho">
+                  <v-card-text class="gradient-no-switch gradient-accent"></v-card-text>
+                  <div class="separator"></div>
                   <v-card-text class="text-xs-center">
                     <v-icon x-large class="text--lighten-2">dashboard</v-icon>
                   </v-card-text>
@@ -94,11 +96,11 @@
     <div class="separator"></div>
 
     <!-- Introduce -->
-    <section class="elevation-10"
-             :style="[$vuetify.breakpoint.lgAndUp ?
+    <section class="elevation-10">
+      <v-layout column align-center justify-center class="my-2"
+                :style="[$vuetify.breakpoint.lgAndUp ?
              { padding: '50px',width: '100%', backgroundSize: '100%', backgroundImage: 'url(' + require('@/assets/img/paper2.jpg') + ')'} :
              { padding: '50px',width: '100%'}]">
-      <v-layout column align-center justify-center class="my-2">
         <h1 class="display-2 text-xs-center black--text">8 Questions to Myself</h1>
         <v-layout row wrap class="my-5" align-center text-xs-center>
           <v-flex md6 style="padding: 20px;">
@@ -145,6 +147,8 @@
           </v-flex>
         </v-layout>
       </v-layout>
+      <v-layout class="gradient-no-switch gradient-primary" style="height: 20px;" row wrap align-center text-xs-center>
+      </v-layout>
     </section>
     <div class="separator"></div>
 
@@ -153,9 +157,7 @@
       :style="{ width: '100%', /*backgroundSize: '100%', backgroundImage: 'url(' + require('@/assets/img/buildings.jpg') + ')'*/}">
       <v-container fill-height fill-width>
         <v-layout column wrap class="my-5">
-          <h1 class="display-2 text-xs-center white--text"
-            :style="{ paddingTop: '20px', paddingBottom: '50px', backgroundPosition: '50% -10px', backgroundImage: 'url(' + require('@/assets/img/stroke4.png') + ')'}">
-            My Work</h1><br>
+          <h1 class="display-2 text-xs-center">My Work</h1><br>
           <v-container grid-list-xl>
             <v-layout row wrap class="my-2" align-center>
               <v-flex xs12 md6 align-center>
@@ -166,7 +168,7 @@
                     different technologies in a creative way to solve problems and automate tasks of everyday
                     life.</p>
                   <v-layout row>
-                    <v-btn dark class="gradient gradient-green" large round to="/projects/exploxcycling"
+                    <v-btn dark class="gradient gradient-primary" large round to="/projects/exploxcycling"
                            @click="expandDrawer">
                       Project ExploX
                     </v-btn>
@@ -176,7 +178,7 @@
             </v-layout>
             <v-layout row wrap class="my-5" align-center>
               <v-flex xs12 md6>
-                <img src="@/assets/img/genx-gradient-compositions0-.jpg" alt="Vuetify.js" width="100%">
+                <img src="@/assets/img/landing_cover.jpg" alt="Vuetify.js" width="100%">
               </v-flex>
               <v-flex xs12 md6>
                 <v-layout column align-center justify-center class="black--text">
@@ -187,7 +189,7 @@
                     different
                     contexts such as gaming or sports.</p>
                   <v-layout row>
-                    <v-btn dark class="gradient gradient-blue" large round to="/projects/smartdoorbell"
+                    <v-btn dark class="gradient gradient-accent" large round to="/projects/smartdoorbell"
                            @click="expandDrawer">
                       Smart Doorbell
                     </v-btn>
@@ -219,7 +221,7 @@
     </section>
 
     <!-- Principles -->
-    <section class="elevation-10" style="background-color: #e1e1e1">
+    <section class="elevation-0 gradient-no-switch gradient-slight-primary">
       <v-container fill-height fill-width>
         <v-layout column wrap class="my-5" align-center>
           <v-flex xs12>
@@ -227,8 +229,9 @@
             <v-container grid-list-xl>
               <v-layout row wrap align-center>
                 <v-flex xs12 md4>
-                  <v-card dark class="elevation-0 gradient-no-switch gradient-blue text-xs-center align-center"
-                          style="padding: 10px;">
+                  <v-card class="elevation-0 text-xs-center align-center">
+                    <v-card-text class="gradient-no-switch gradient-accent"></v-card-text>
+                    <div class="separator"></div>
                     <v-card-text>
                       <v-icon x-large class="text--lighten-2" style="margin-bottom: -20px;">color_lens</v-icon>
                     </v-card-text>
@@ -245,8 +248,9 @@
                   </v-card>
                 </v-flex>
                 <v-flex xs12 md4>
-                  <v-card dark class="elevation-0 gradient-no-switch gradient-green text-xs-center align-center"
-                          style="padding: 10px;">
+                  <v-card class="elevation-0 text-xs-center align-center">
+                    <v-card-text class="gradient-no-switch gradient-orange"></v-card-text>
+                    <div class="separator"></div>
                     <v-card-text>
                       <v-icon x-large class="text--lighten-2" style="margin-bottom: -20px;">360</v-icon>
                     </v-card-text>
@@ -263,14 +267,15 @@
                   </v-card>
                 </v-flex>
                 <v-flex xs12 md4>
-                  <v-card dark class="elevation-0 gradient-no-switch gradient-orange text-xs-center align-center"
-                          style="padding: 10px;">
+                  <v-card class="elevation-0 text-xs-center align-center">
+                    <v-card-text class="gradient-no-switch gradient-primary"></v-card-text>
+                    <div class="separator"></div>
                     <v-card-text>
                       <v-icon x-large class="text--lighten-2" style="margin-bottom: -20px;">assignment_turned_in
                       </v-icon>
                     </v-card-text>
                     <v-card-title primary-title class="layout justify-center">
-                      <div class="headline text-xs-center white--text">Get Shit Done</div>
+                      <div class="headline text-xs-center">Get Shit Done</div>
                     </v-card-title>
                     <v-card-text>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porta erat et malesuada luctus.
@@ -282,8 +287,9 @@
                   </v-card>
                 </v-flex>
                 <v-flex xs12 md4>
-                  <v-card dark class="elevation-0 gradient-no-switch gradient-green text-xs-center align-center"
-                          style="padding: 10px;">
+                  <v-card class="elevation-0 text-xs-center align-center">
+                    <v-card-text class="gradient-no-switch gradient-orange"></v-card-text>
+                    <div class="separator"></div>
                     <v-card-text>
                       <v-icon x-large class="text--lighten-2" style="margin-bottom: -20px;">whatshot</v-icon>
                     </v-card-text>
@@ -300,8 +306,9 @@
                   </v-card>
                 </v-flex>
                 <v-flex xs12 md4>
-                  <v-card dark class="elevation-0 gradient-no-switch gradient-orange text-xs-center align-center"
-                          style="padding: 10px;">
+                  <v-card class="elevation-0 text-xs-center align-center">
+                    <v-card-text class="gradient-no-switch gradient-primary"></v-card-text>
+                    <div class="separator"></div>
                     <v-card-text>
                       <v-icon x-large class="text--lighten-2" style="margin-bottom: -20px;">cake</v-icon>
                     </v-card-text>
@@ -318,8 +325,9 @@
                   </v-card>
                 </v-flex>
                 <v-flex xs12 md4>
-                  <v-card dark class="elevation-0 gradient-no-switch gradient-blue text-xs-center align-center"
-                          style="padding: 10px;">
+                  <v-card class="elevation-0 text-xs-center align-center">
+                    <v-card-text class="gradient-no-switch gradient-accent"></v-card-text>
+                    <div class="separator"></div>
                     <v-card-text>
                       <v-icon x-large class="text--lighten-2" style="margin-bottom: -20px;">school</v-icon>
                     </v-card-text>
@@ -346,9 +354,7 @@
     <section>
       <v-container fill-height fill-width>
         <v-layout column wrap class="my-5" align-center>
-          <h1
-            :style="{  paddingTop: '40px', paddingBottom: '50px', backgroundPosition: '50% -00px', backgroundImage: 'url(' + require('@/assets/img/stroke3.png') + ')'}"
-            class="display-2 text-xs-center white--text">Get Shit Done</h1><br>
+          <h1 class="display-2 text-xs-center">Get Shit Done</h1><br>
           <h1 class="subheading text-xs-center">Some cool things I achieved lately</h1>
           <v-container fluid grid-list-md>
             <v-layout row>
@@ -357,7 +363,7 @@
                 <v-timeline dense>
                   <v-timeline-item color="primary" large>
                     <v-card>
-                      <v-card-title class="gradient-no-switch gradient-blue">
+                      <v-card-title class="gradient-no-switch gradient-accent">
                         <h2 class="display-1 white--text font-weight-light">Title 1</h2>
                       </v-card-title>
                       <v-container>
@@ -373,7 +379,7 @@
                   </v-timeline-item>
                   <v-timeline-item color="success" large>
                     <v-card>
-                      <v-card-title class="gradient-no-switch gradient-green">
+                      <v-card-title class="gradient-no-switch gradient-primary">
                         <h2 class="display-1 white--text font-weight-light">Title 1</h2>
                       </v-card-title>
                       <v-container>
@@ -408,7 +414,7 @@
                 <div class="black--text subheading mb-3 text-xs-center">
                   Are you interested in my work or want to know more about some of my <a href="/projects">projects</a>?
                 </div>
-                <v-btn class="gradient gradient-orange" style="width: 100%; margin-bottom: -20px" large round
+                <v-btn class="gradient gradient-primary" style="width: 100%; margin-bottom: -20px" large round
                        to="/contact" dark
                        @click="expandDrawer">
                   Contact Me

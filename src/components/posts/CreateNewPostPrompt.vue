@@ -1,5 +1,5 @@
 <template>
-  <v-card class="gradient-no-switch gradient-blue">
+  <v-card class="gradient-no-switch gradient-accent">
     <v-card-title primary class="title">
       <v-icon>show_chart</v-icon>&nbsp;Create New Post
     </v-card-title>

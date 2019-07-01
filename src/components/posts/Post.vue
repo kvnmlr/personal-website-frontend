@@ -1,6 +1,6 @@
 <template>
   <v-flex xs12>
-    <v-card class="gradient-no-switch gradient-blue" hover :to="{path: '/posts/' + post._id}">
+    <v-card class="gradient-no-switch gradient-accent" hover :to="{path: '/posts/' + post._id}">
       <v-card-title primary-title>
         <v-layout column>
           <v-flex class="headline">

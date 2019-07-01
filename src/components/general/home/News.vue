@@ -3,7 +3,7 @@
     <v-layout row wrap>
       <v-flex xs12 sm12 md7>
         <div v-for="item in news.slice(0, 3)" :key="item.headline" >
-          <v-card class="gradient-no-switch gradient-blue">
+          <v-card class="gradient-no-switch gradient-accent">
             <v-card-title primary class="title">
               <v-icon>message</v-icon>&nbsp;{{ item.headline }}
             </v-card-title>

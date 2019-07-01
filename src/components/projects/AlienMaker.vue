@@ -8,7 +8,7 @@
           <div class="white--text subheading mb-5 text-xs-center">Konzept und Umsetzung der drei Beispiele für den
             Kita-Bereich<br>auf der Didacta Bildungsmesse 2019
           </div>
-          <v-btn class="gradient gradient-blue" style="width: 300px;" large round dark to="/guide"
+          <v-btn class="gradient gradient-accent" style="width: 300px;" large round dark to="/guide"
                  @click="expandDrawer">
             Zum Video
           </v-btn>
@@ -42,7 +42,7 @@
           <v-container grid-list-xl>
             <v-layout row wrap align-center>
               <v-flex xs12 md4>
-                <v-card class="gradient-no-switch gradient-green"
+                <v-card class="gradient-no-switch gradient-primary"
                         style="padding: 20px; min-height: 370px; max-height: 450px;" dark>
                   <v-card-text class="text-xs-center">
                   </v-card-text>
@@ -57,7 +57,7 @@
                 </v-card>
               </v-flex>
               <v-flex xs12 md4>
-                <v-card class="gradient-no-switch gradient-blue"
+                <v-card class="gradient-no-switch gradient-accent"
                         style="padding: 20px; min-height: 370px; max-height: 450px;" dark>
                   <v-card-text class="text-xs-center">
                   </v-card-text>
@@ -221,7 +221,7 @@
                   Alternativ können Sie auch mit der Leitung des verantwortlichen Forschungsinstitus Kontakt aufnehmen
                   (https://fobid.org/kontakt)
                 </div>
-                <v-btn class="gradient gradient-blue" style="width: 100%; margin-bottom: -20px" large round
+                <v-btn class="gradient gradient-accent" style="width: 100%; margin-bottom: -20px" large round
                        to="/contact" dark @click="expandDrawer">
                   Erde an Kevin, bitte Kontakt aufnehmen
                 </v-btn>

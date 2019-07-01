@@ -28,7 +28,7 @@
               </v-flex>
               <v-flex xs12 sm6>
                 <v-btn :disabled="loadingDialog" :loading="loadingDialog"
-                       class="gradient gradient-blue" @click.stop="performSearch"
+                       class="gradient gradient-accent" @click.stop="performSearch"
                        light round large style="width: 95%; height: 70px; vertical-align: bottom">
                   <v-icon>search</v-icon>&nbsp;Search
                 </v-btn>
