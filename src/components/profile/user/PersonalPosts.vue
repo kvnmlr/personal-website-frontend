@@ -30,12 +30,10 @@
 <script>
   import Post from "../../posts/Post";
   import CreateNewPostPrompt from "../../posts/CreateNewPostPrompt";
-  import UploadFile from "../../posts/UploadFile";
 
   export default {
     name: "PersonalPosts",
     components: {
-      UploadFile,
       CreateNewPostPrompt,
       Post
     },

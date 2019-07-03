@@ -236,15 +236,11 @@
 </template>
 
 <script>
-  import Welcome from '../general/Welcome'
   import apiMixin from '../../mixins/apiMixin'
-  import Explanation from '../general/Explanation'
   import {EventBus} from '@/eventBus.js'
-  import UnderConstruction from '../includes/UnderConstruction'
 
   export default {
     name: 'AlienMaker',
-    components: {UnderConstruction, Explanation, Welcome,},
     created () {
     },
     methods: {

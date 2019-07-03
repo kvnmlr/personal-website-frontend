@@ -92,46 +92,15 @@
         </v-layout>
       </v-container>
     </section>
-    <div class="separator"></div>
-
-    <!-- Contact -->
-    <section>
-      <v-parallax :src="require('@/assets/img/desk.jpg')" height="350">
-        <v-layout column align-center justify-center class="black--text">
-          <v-container grid-list-xl>
-            <v-layout row wrap justify-center class="my-5" align-center>
-              <v-flex xs0 sm6></v-flex>
-              <v-flex xs12 sm4 class="my-3">
-                <h1 class="mb-3 display-1 text-xs-center"><br>Questions?</h1>
-                <div class="black--text subheading mb-3 text-xs-center">
-                  Do you have any questions about the products?
-                </div>
-                <v-btn class="gradient gradient-primary" style="width: 100%; margin-bottom: -20px" large round
-                       to="/contact" dark
-                       @click="expandDrawer">
-                  Contact Me
-                </v-btn>
-              </v-flex>
-              <v-flex xs0 sm6></v-flex>
-            </v-layout>
-          </v-container>
-        </v-layout>
-      </v-parallax>
-    </section>
   </div>
 </template>
 
 <script>
-  import Welcome from './Welcome'
   import apiMixin from '../../mixins/apiMixin'
-  import Explanation from './Explanation'
   import {EventBus} from '@/eventBus.js'
-  import UnderConstruction from '../includes/UnderConstruction'
 
   export default {
     name: 'Products',
-    components: {UnderConstruction, Explanation, Welcome,},
-
     data: () => ({
       products: [
         {

@@ -10,27 +10,17 @@
     </section>
     <div class="separator"></div>
 
-    <v-container fill-height fill-width>
-      <v-layout justify-center>
-        <v-flex>
-          <!-- Quote -->
-          <section>
-            <v-layout column align-center justify-center>
-              <v-card class="elevation-10 gradient-no-switch gradient-slight-accent" style="margin-top: -80px;" width="70%">
-                <v-card-title primary-title class="layout justify-center">
-                  <p align="center" class="subheading align-center">These are my goals and resolutions for the first
+
+    <!-- Quote -->
+    <section>
+      <v-layout column align-center justify-center>
+        <cover-card title="These are my goals and resolutions for the first
                     half of 2019 ... well, at least
                     the ones I want to share publicly. Progress is updated on a monthly basis and documented in detail
-                    in the monthly goals reports.
-                  </p>
-                </v-card-title>
-              </v-card>
-            </v-layout>
-          </section>
-          <div class="separator" style="margin-bottom: 80px;"></div>
-        </v-flex>
+                    in the monthly goals reports."></cover-card>
       </v-layout>
-    </v-container>
+    </section>
+    <div class="separator" style="margin-bottom: 80px;"></div>
 
     <v-container>
       <v-timeline :dense="$vuetify.breakpoint.smAndDown">
@@ -59,11 +49,12 @@
 </template>
 
 <script>
-  import UnderConstruction from '../../includes/UnderConstruction'
+  import UnderConstruction from '../includes/UnderConstruction'
+  import CoverCard from '../includes/CoverCard'
 
   export default {
     name: 'Education',
-    components: {UnderConstruction},
+    components: {CoverCard, UnderConstruction},
     data: () => ({
       items: [
         {

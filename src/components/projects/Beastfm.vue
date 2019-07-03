@@ -461,15 +461,11 @@
 </template>
 
 <script>
-  import Welcome from '../general/Welcome'
   import apiMixin from '../../mixins/apiMixin'
-  import Explanation from '../general/Explanation'
   import {EventBus} from '@/eventBus.js'
-  import UnderConstruction from '../includes/UnderConstruction'
 
   export default {
     name: 'ProjectBeastFM',
-    components: {UnderConstruction, Explanation, Welcome,},
     created () {
       EventBus.$emit('collapseDrawer')
     },

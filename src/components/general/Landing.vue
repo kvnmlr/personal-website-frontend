@@ -15,15 +15,8 @@
     <!-- Quote -->
     <section>
       <v-layout column align-center justify-center>
-        <v-card class="elevation-10 gradient-no-switch gradient-slight-primary" style="margin-top: -80px; padding: 30px;"
-                width="60%">
-          <v-card-title primary-title class="layout justify-center">
-            <div class="title">“I think the things you regret most in life are the things you didn’t do.”</div>
-          </v-card-title>
-          <v-card-text class="layout justify-center">
-            Steve Jobs
-          </v-card-text>
-        </v-card>
+        <cover-card title='"I think the things you regret most in life are the things you didn’t do.”'
+                    text="Steve Jobs" primary color="primary"></cover-card>
       </v-layout>
     </section>
     <div class="separator"></div>
@@ -38,55 +31,31 @@
           <v-container grid-list-xl>
             <v-layout row wrap align-center>
               <v-flex xs12 md4>
-                <v-card style="min-height: 360px; max-height: 450px;" hover
-                        to="/projects/exploxcycling">
-                  <v-card-text class="gradient-no-switch gradient-accent"></v-card-text>
-                  <div class="separator"></div>
-                  <v-card-text class="text-xs-center">
-                    <v-icon x-large class="text--lighten-2">directions_bike</v-icon>
-                  </v-card-text>
-                  <v-card-title primary-title class="layout justify-center">
-                    <div class="headline text-xs-center">ExploX Cycling</div>
-                  </v-card-title>
-                  <v-card-text>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porta erat et malesuada luctus.
-                    Duis fringilla vestibulum augue, volutpat egestas neque sagittis sit amet. Maecenas ac lorem nisi.
-                  </v-card-text>
-                </v-card>
+                <icon-action-card
+                  icon="directions_bike"
+                  title="ExploX Cycling"
+                  text=" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porta erat et malesuada luctus."
+                  color="accent"
+                  hover-link="guide">
+                </icon-action-card>
               </v-flex>
               <v-flex xs12 md4>
-                <v-card light style="min-height: 360px; max-height: 450px;" hover
-                        to="/projects/vueupstarter">
-                  <v-card-text class="gradient-no-switch gradient-accent"></v-card-text>
-                  <div class="separator"></div>
-                  <v-card-text class="text-xs-center">
-                    <v-icon x-large class="text--lighten-2">desktop_mac</v-icon>
-                  </v-card-text>
-                  <v-card-title primary-title class="layout justify-center">
-                    <div class="headline">Vue Express Upstarter</div>
-                  </v-card-title>
-                  <v-card-text>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porta erat et malesuada luctus.
-                    Duis fringilla vestibulum augue, volutpat egestas neque sagittis sit amet. Maecenas ac lorem nisi.
-                  </v-card-text>
-                </v-card>
+                <icon-action-card
+                  icon="desktop_mac"
+                  title="Vue Express Upstarter"
+                  text=" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porta erat et malesuada luctus."
+                  color="accent"
+                  hover-link="guide">
+                </icon-action-card>
               </v-flex>
               <v-flex xs12 md4>
-                <v-card light style="min-height: 360px; max-height: 450px;" hover
-                        to="/projects/soho">
-                  <v-card-text class="gradient-no-switch gradient-accent"></v-card-text>
-                  <div class="separator"></div>
-                  <v-card-text class="text-xs-center">
-                    <v-icon x-large class="text--lighten-2">dashboard</v-icon>
-                  </v-card-text>
-                  <v-card-title primary-title class="layout justify-center">
-                    <div class="headline text-xs-center">Project SoHo</div>
-                  </v-card-title>
-                  <v-card-text>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porta erat et malesuada luctus.
-                    Duis fringilla vestibulum augue, volutpat egestas neque sagittis sit amet. Maecenas ac lorem nisi.
-                  </v-card-text>
-                </v-card>
+                <icon-action-card
+                  icon="dashboard"
+                  title="Project SoHo"
+                  text=" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porta erat et malesuada luctus."
+                  color="accent"
+                  hover-link="guide">
+                </icon-action-card>
               </v-flex>
             </v-layout>
           </v-container>
@@ -229,119 +198,64 @@
             <v-container grid-list-xl>
               <v-layout row wrap align-center>
                 <v-flex xs12 md4>
-                  <v-card class="elevation-0 text-xs-center align-center">
-                    <v-card-text class="gradient-no-switch gradient-accent"></v-card-text>
-                    <div class="separator"></div>
-                    <v-card-text>
-                      <v-icon x-large class="text--lighten-2" style="margin-bottom: -20px;">color_lens</v-icon>
-                    </v-card-text>
-                    <v-card-title primary-title class="layout justify-center">
-                      <div class="headline text-xs-center">Work Creatively</div>
-                    </v-card-title>
-                    <v-card-text>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porta erat et malesuada luctus.
-                      nisi.
-                    </v-card-text>
-                    <v-btn flat round to="/guide" @click="expandDrawer">
-                      Alpha Implement's Design
-                    </v-btn>
-                  </v-card>
+                  <icon-action-card
+                    icon="color_lens"
+                    title="Work Creatively"
+                    text=" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porta erat et malesuada luctus."
+                    button-text="Alpha Implement's Design"
+                    button-destination="guide"
+                    color="accent">
+                  </icon-action-card>
                 </v-flex>
                 <v-flex xs12 md4>
-                  <v-card class="elevation-0 text-xs-center align-center">
-                    <v-card-text class="gradient-no-switch gradient-orange"></v-card-text>
-                    <div class="separator"></div>
-                    <v-card-text>
-                      <v-icon x-large class="text--lighten-2" style="margin-bottom: -20px;">360</v-icon>
-                    </v-card-text>
-                    <v-card-title primary-title class="layout justify-center">
-                      <div class="headline">Be Agile</div>
-                    </v-card-title>
-                    <v-card-text>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porta erat et malesuada luctus.
-                      nisi.
-                    </v-card-text>
-                    <v-btn flat round to="/guide" @click="expandDrawer">
-                      My Github Profile
-                    </v-btn>
-                  </v-card>
+                  <icon-action-card
+                    icon="360"
+                    title="Be Agile"
+                    text=" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porta erat et malesuada luctus."
+                    button-text="My Github Profile"
+                    button-destination="guide"
+                    color="orange">
+                  </icon-action-card>
                 </v-flex>
                 <v-flex xs12 md4>
-                  <v-card class="elevation-0 text-xs-center align-center">
-                    <v-card-text class="gradient-no-switch gradient-primary"></v-card-text>
-                    <div class="separator"></div>
-                    <v-card-text>
-                      <v-icon x-large class="text--lighten-2" style="margin-bottom: -20px;">assignment_turned_in
-                      </v-icon>
-                    </v-card-text>
-                    <v-card-title primary-title class="layout justify-center">
-                      <div class="headline text-xs-center">Get Shit Done</div>
-                    </v-card-title>
-                    <v-card-text>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porta erat et malesuada luctus.
-                      nisi.
-                    </v-card-text>
-                    <v-btn flat round to="/guide" @click="expandDrawer">
-                      All Finished Projects
-                    </v-btn>
-                  </v-card>
+                  <icon-action-card
+                    icon="assignment_turned_in"
+                    title="Get Shit Done"
+                    text=" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porta erat et malesuada luctus."
+                    button-text="All Finished Projects"
+                    button-destination="guide"
+                    color="primary">
+                  </icon-action-card>
                 </v-flex>
                 <v-flex xs12 md4>
-                  <v-card class="elevation-0 text-xs-center align-center">
-                    <v-card-text class="gradient-no-switch gradient-orange"></v-card-text>
-                    <div class="separator"></div>
-                    <v-card-text>
-                      <v-icon x-large class="text--lighten-2" style="margin-bottom: -20px;">whatshot</v-icon>
-                    </v-card-text>
-                    <v-card-title primary-title class="layout justify-center">
-                      <div class="headline text-xs-center">Get Excited</div>
-                    </v-card-title>
-                    <v-card-text>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porta erat et malesuada luctus.
-                      nisi.
-                    </v-card-text>
-                    <v-btn flat round to="/guide" @click="expandDrawer">
-                      Concepts
-                    </v-btn>
-                  </v-card>
+                  <icon-action-card
+                    icon="whatshot"
+                    title="Get Excited"
+                    text=" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porta erat et malesuada luctus."
+                    button-text="Concepts"
+                    button-destination="guide"
+                    color="orange">
+                  </icon-action-card>
                 </v-flex>
                 <v-flex xs12 md4>
-                  <v-card class="elevation-0 text-xs-center align-center">
-                    <v-card-text class="gradient-no-switch gradient-primary"></v-card-text>
-                    <div class="separator"></div>
-                    <v-card-text>
-                      <v-icon x-large class="text--lighten-2" style="margin-bottom: -20px;">cake</v-icon>
-                    </v-card-text>
-                    <v-card-title primary-title class="layout justify-center">
-                      <div class="headline">Show Courage</div>
-                    </v-card-title>
-                    <v-card-text>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porta erat et malesuada luctus.
-                      nisi.
-                    </v-card-text>
-                    <v-btn flat round to="/guide" @click="expandDrawer">
-                      My 2019 Goals
-                    </v-btn>
-                  </v-card>
+                  <icon-action-card
+                    icon="cake"
+                    title="Show Courage"
+                    text=" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porta erat et malesuada luctus."
+                    button-text="My 2019 Goals"
+                    button-destination="guide"
+                    color="primary">
+                  </icon-action-card>
                 </v-flex>
                 <v-flex xs12 md4>
-                  <v-card class="elevation-0 text-xs-center align-center">
-                    <v-card-text class="gradient-no-switch gradient-accent"></v-card-text>
-                    <div class="separator"></div>
-                    <v-card-text>
-                      <v-icon x-large class="text--lighten-2" style="margin-bottom: -20px;">school</v-icon>
-                    </v-card-text>
-                    <v-card-title primary-title class="layout justify-center">
-                      <div class="headline text-xs-center">Continue Learning</div>
-                    </v-card-title>
-                    <v-card-text>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porta erat et malesuada luctus.
-                      nisi.
-                    </v-card-text>
-                    <v-btn flat round to="/guide" @click="expandDrawer">
-                      What I've Learned in Life
-                    </v-btn>
-                  </v-card>
+                  <icon-action-card
+                    icon="school"
+                    title="Continue Learning"
+                    text=" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porta erat et malesuada luctus."
+                    button-text=" What I've Learned in Life"
+                    button-destination="guide"
+                    color="accent">
+                  </icon-action-card>
                 </v-flex>
               </v-layout>
             </v-container>
@@ -404,41 +318,25 @@
 
     <!-- Contact -->
     <section>
-      <v-parallax :src="require('@/assets/img/desk.jpg')" height="350">
-        <v-layout column align-center justify-center class="black--text">
-          <v-container grid-list-xl>
-            <v-layout row wrap justify-center class="my-5" align-center>
-              <v-flex xs0 sm6></v-flex>
-              <v-flex xs12 sm4 class="my-3">
-                <h1 class="mb-3 display-1 text-xs-center"><br>Let's Talk</h1>
-                <div class="black--text subheading mb-3 text-xs-center">
-                  Are you interested in my work or want to know more about some of my <a href="/projects">projects</a>?
-                </div>
-                <v-btn class="gradient gradient-primary" style="width: 100%; margin-bottom: -20px" large round
-                       to="/contact" dark
-                       @click="expandDrawer">
-                  Contact Me
-                </v-btn>
-              </v-flex>
-              <v-flex xs0 sm6></v-flex>
-            </v-layout>
-          </v-container>
-        </v-layout>
-      </v-parallax>
+      <contact-promt title="Let's Talk"
+                     text="Are you interested in my work or want to know more about some of my projects?"
+                     button-text="Contact"
+                     button-destination="contact">
+      </contact-promt>
     </section>
   </div>
 </template>
 
 <script>
-  import Welcome from './Welcome'
   import apiMixin from '../../mixins/apiMixin'
-  import Explanation from './Explanation'
   import {EventBus} from '@/eventBus.js'
-  import UnderConstruction from '../includes/UnderConstruction'
+  import CoverCard from '../includes/CoverCard'
+  import ContactPromt from '../includes/ContactPromt'
+  import IconActionCard from '../includes/IconActionCard'
 
   export default {
     name: 'Landing',
-    components: {UnderConstruction, Explanation, Welcome,},
+    components: {IconActionCard, ContactPromt, CoverCard},
     created () {
       //EventBus.$emit('collapseDrawer')
     },

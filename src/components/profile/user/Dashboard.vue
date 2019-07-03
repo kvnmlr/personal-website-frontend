@@ -107,7 +107,6 @@
                       <p>
                         Invite your friends people to use Vuetiful!
                       </p>
-                      <invite-friend :user="user"></invite-friend>
                     </v-card-text>
                   </v-card>
                 </v-flex>
@@ -170,12 +169,10 @@
   import Post from '../../posts/Post'
   import LoadingDialog from '../../includes/LoadingDialog'
   import {EventBus} from '@/eventBus.js'
-  import InviteFriend from '../../general/InviteFriend'
 
   export default {
     name: 'User',
     components: {
-      InviteFriend,
       LoadingDialog, Post, PersonalPosts
     },
     data () {
